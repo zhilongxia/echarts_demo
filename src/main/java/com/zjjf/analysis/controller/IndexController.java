@@ -18,16 +18,16 @@ public class IndexController {
 	@Autowired
 	private ExampleService exampleService;
 
-	@RequestMapping(value = "/onload")
+	@RequestMapping(value = "/origin")
 	public String load() {
 
-		return "echarts/index";
+		return "echarts/origin-demo";
 	}
 
-	@RequestMapping(value = "/onload2")
+	@RequestMapping(value = "/newdata")
 	public String load2() {
 
-		return "echarts/index2";
+		return "echarts/new-data";
 	}
 
 	@RequestMapping(value = "/newonload")
