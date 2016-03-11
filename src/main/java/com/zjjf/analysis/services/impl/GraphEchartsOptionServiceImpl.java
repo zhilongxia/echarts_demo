@@ -96,9 +96,12 @@ public class GraphEchartsOptionServiceImpl extends Echarts<Line> {
 
 	private DataZoom getDataZoom() {
 
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("dataZoom", "区域缩放");
+		map.put("dataZoomReset", "区域缩放后退");
 		DataZoom dataZoom = new DataZoom();
 		dataZoom.setShow(true);
-		dataZoom.setTitle("{dataZoom: '区域缩放',  dataZoomReset: '区域缩放后退'}");
+		dataZoom.setTitle(map);
 		return dataZoom;
 	}
 
