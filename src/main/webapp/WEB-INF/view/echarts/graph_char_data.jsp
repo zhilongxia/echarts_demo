@@ -1,21 +1,15 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>  
-<%  
-String path = request.getContextPath();  
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";  
-%>  
-  
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ include file="../common/echarts_head.jsp"%>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">  
-<html>  
+<html lang="zh"> 
   <head>  
     <base href="<%=basePath%>">  
     <title>ECharts实例</title>  
   </head>  
   <body>  
-    <div id="mainBar" style="height:500px;border:1px solid #ccc;padding:10px;"></div>  
-    
-    <script src="<%=request.getContextPath() %>/resources/js/echarts/echarts.js"></script>
-    <script src="<%=request.getContextPath() %>/resources/js/jquery/jquery-1.9.1.min.js"></script>
-    
+  
+   <div id="mainBar" style="height:500px;border:1px solid #ccc;padding:10px;"></div>  
       
    <script type="text/javascript">  
 	

@@ -1,20 +1,16 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ include file="../common/echarts_head.jsp"%>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<base href="<%=basePath%>">
-<title>ECharts pie 实例</title>
-</head>
-<body>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">  
+<html lang="zh"> 
+  <head>  
+    <base href="<%=basePath%>">  
+    <title>ECharts实例</title>  
+  </head>  
+  <body>  
+  
 	<div id="mainPie" style="height: 400px"></div>
-	<script src="<%=request.getContextPath()%>/resources/js/echarts/echarts.js"></script>
-	<script src="<%=request.getContextPath() %>/resources/js/jquery/jquery-1.9.1.min.js"></script>
+
 	    
 	<script type="text/javascript"> 
 	
