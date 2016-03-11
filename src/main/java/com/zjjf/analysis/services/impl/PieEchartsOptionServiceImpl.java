@@ -2,9 +2,9 @@ package com.zjjf.analysis.services.impl;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.github.abel533.echarts.Legend;
@@ -18,10 +18,14 @@ import com.github.abel533.echarts.code.Trigger;
 import com.github.abel533.echarts.feature.Restore;
 import com.github.abel533.echarts.series.Pie;
 import com.zjjf.analysis.services.echarts.pie.PieEcharts;
+import com.zjjf.analysis.services.impl.datamodle.PieDataService;
 import com.zjjf.analysis.utils.ZfEcharts;
 
 @Service
 public class PieEchartsOptionServiceImpl extends PieEcharts {
+	
+	@Autowired
+	private PieDataService pieDataService;
 	
 	public Option getOption(ZfEcharts type) {
 		
@@ -85,20 +89,9 @@ public class PieEchartsOptionServiceImpl extends PieEcharts {
 		pie.setType(SeriesType.pie);
 		pie.setRadius("55%");
 		pie.setCenter(center);
-		pie.setData(this.simulationData());
+		pie.setData(pieDataService.simulationData());
 		pieList.add(pie);
 		super.setSeries2Option(pieList);
 	}
-	
-	public List<HashMap<String, Object>> simulationData() {
 
-		List<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
-		for (int i = 0; i < 4; i++) {
-			HashMap<String, Object> map = new HashMap<String, Object>();
-			map.put("value", 100 * (i + 1));
-			map.put("name", "part" + (i * 1 + 1));
-			list.add(map);
-		}
-		return list;
-	}
 }
