@@ -26,7 +26,7 @@ public class IndexController {
 	@RequestMapping(value = "/graph_char")
 	public String graphchar() {
 
-		return "echarts/grap_char";
+		return "echarts/graph_char";
 	}
 
 	@RequestMapping(value = "/graphdata")
@@ -34,19 +34,13 @@ public class IndexController {
 
 		return "echarts/graph_char_data";
 	}
+	
+	@RequestMapping(value = "/graphdeep")
+	public String graphdeep() {
 
-	@RequestMapping(value = "/pie_chart")
-	public String newload() {
-
-		return "echarts/pie_chart";
+		return "echarts/graph_char_deep";
 	}
-
-	@RequestMapping(value = "/piedata")
-	public String pie_chart() {
-
-		return "echarts/pie_chart_data";
-	}
-
+	
 	@RequestMapping(value = "/getGraphJson", produces = "application/json; charset=utf-8")
 	public @ResponseBody String getGraph_demo() throws JsonProcessingException {
 
@@ -61,6 +55,24 @@ public class IndexController {
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.setSerializationInclusion(Include.NON_NULL);
 		return mapper.writeValueAsString(option);
+	}
+	
+	@RequestMapping(value = "/pie_chart")
+	public String pie_chart() {
+
+		return "echarts/pie_chart";
+	}
+	
+	@RequestMapping(value = "/pie_chart_deep")
+	public String pie_chart_deep() {
+
+		return "echarts/pie_chart_deep";
+	}
+
+	@RequestMapping(value = "/piedata")
+	public String piedata() {
+
+		return "echarts/pie_chart_data";
 	}
 
 	@RequestMapping(value = "/getPieJson", produces = "application/json; charset=utf-8")

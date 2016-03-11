@@ -93,7 +93,7 @@
 				                {value:135, name:'视频广告'},
 				                {
 				                    value:1048,
-				                    name:'谷歌',
+				                    name:'百度',
 				                    itemStyle : {
 				                        normal : {
 				                            color : (function (){
@@ -124,7 +124,7 @@
 				                        }
 				                    }
 				                },
-				                {value:251, name:'百度'},
+				                {value:251, name:'谷歌'},
 				                {
 				                    value:102,
 				                    name:'必应',
@@ -203,7 +203,7 @@
 				            }
 				        }
 				    ]
-				};
+				};                   
 			// 为echarts对象加载数据 
 			myChart.setOption(option);
 		});
