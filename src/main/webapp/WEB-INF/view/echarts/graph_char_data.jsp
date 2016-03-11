@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       
    <script type="text/javascript">  
 	
-		var loadUrl = '<%=request.getContextPath() %>/gateway/getMessage';
+		var loadUrl = '<%=request.getContextPath() %>/gateway/getGraphJson';
 	
 		// 配置路径  
 	    require.config({  

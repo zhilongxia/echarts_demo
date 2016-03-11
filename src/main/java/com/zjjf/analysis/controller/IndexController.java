@@ -9,40 +9,67 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.abel533.echarts.Option;
-import com.zjjf.analysis.services.ExampleService;
+import com.zjjf.analysis.services.impl.EchartsOptionServiceImpl;
+import com.zjjf.analysis.services.impl.PieEchartsOptionServiceImpl;
+import com.zjjf.analysis.utils.ZfEcharts;
 
 @Controller
 @RequestMapping({ "/gateway" })
 public class IndexController {
 
 	@Autowired
-	private ExampleService exampleService;
+	private EchartsOptionServiceImpl graphOptionService;
+	
+	@Autowired
+	PieEchartsOptionServiceImpl pieOptionService;
 
-	@RequestMapping(value = "/origin")
-	public String load() {
+	@RequestMapping(value = "/graph_char")
+	public String graphchar() {
 
-		return "echarts/origin-demo";
+		return "echarts/grap_char";
 	}
 
-	@RequestMapping(value = "/newdata")
-	public String load2() {
+	@RequestMapping(value = "/graphdata")
+	public String graphdata() {
 
-		return "echarts/new-data";
+		return "echarts/graph_char_data";
 	}
 
-	@RequestMapping(value = "/newonload")
+	@RequestMapping(value = "/pie_chart")
 	public String newload() {
 
-		return "echarts/echarts-java";
+		return "echarts/pie_chart";
 	}
 
-	@RequestMapping(value = "/getMessage", produces = "application/json; charset=utf-8")
-	public @ResponseBody String getMessage() throws JsonProcessingException {
+	@RequestMapping(value = "/piedata")
+	public String pie_chart() {
+
+		return "echarts/pie_chart_data";
+	}
+
+	@RequestMapping(value = "/getGraphJson", produces = "application/json; charset=utf-8")
+	public @ResponseBody String getGraph_demo() throws JsonProcessingException {
 
 		Option option = new Option();
 		try {
 
-			option = exampleService.getOption();
+			option = graphOptionService.getOption(ZfEcharts.graph);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.setSerializationInclusion(Include.NON_NULL);
+		return mapper.writeValueAsString(option);
+	}
+
+	@RequestMapping(value = "/getPieJson", produces = "application/json; charset=utf-8")
+	public @ResponseBody String getPie_demo() throws JsonProcessingException {
+
+		Option option = new Option();
+		try {
+
+			option = pieOptionService.getOption(ZfEcharts.pie);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
