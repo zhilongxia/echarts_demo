@@ -17,108 +17,88 @@ import com.github.abel533.echarts.code.SeriesType;
 import com.github.abel533.echarts.code.Trigger;
 import com.github.abel533.echarts.feature.Restore;
 import com.github.abel533.echarts.series.Pie;
-import com.zjjf.analysis.services.IechartsOptionService;
+import com.zjjf.analysis.services.echarts.pie.PieEcharts;
 import com.zjjf.analysis.utils.ZfEcharts;
 
 @Service
-public class PieEchartsOptionServiceImpl implements IechartsOptionService {
-
-	@Override
+public class PieEchartsOptionServiceImpl extends PieEcharts {
+	
 	public Option getOption(ZfEcharts type) {
-
+		
 		Option option = new Option();
-		if (type != ZfEcharts.pie) {
-			return option;
-		}
-
-		setTitle2Option(option);
-		setTooltip2Option(option);
-		setLegend2Option(option);
-		setToolbox2Option(option);
-		option.setCalculable(false);
-		setSeries2Option(option);
+		this.setOption(option);
+		this.setTitle2Option();
+		this.setTooltip2Option();
+		this.setLegend2Option();
+		this.setToolbox2Option();
+		this.setSeries2Option();
 		return option;
 	}
-
-	private void setTitle2Option(Option option) {
-
+	
+	public void setTitle2Option() {
+		
 		Title title = new Title();
 		title.setText("ECharts实例");
 		title.setSubtext("饼图（Pie Chart）");
 		title.setX("center");
-		option.setTitle(title);
+		super.setTitle2Option(title);
 	}
 
-	private void setTooltip2Option(Option option) {
-
+	public void setTooltip2Option() {
 		Tooltip tooltip = new Tooltip();
 		tooltip.setTrigger(Trigger.item);
 		tooltip.setFormatter("{a} <br/>{b} : {c} ({d}%)");
-		option.setTooltip(tooltip);
+		super.setTooltip2Option(tooltip);
 	}
 
-	private void setLegend2Option(Option option) {
-
+	public void setLegend2Option() {
+		
 		Legend legend = new Legend();
 		legend.setOrient(Orient.vertical);
 		legend.setX("left");
 		legend.data(Arrays.asList("part1", "part2", "part3", "part4"));
-		option.setLegend(legend);
+		super.setLegend2Option(legend);
 	}
 
-	private void setToolbox2Option(Option option) {
-
+	public void setToolbox2Option() {
+		
 		Toolbox toolbox = new Toolbox();
 		toolbox.setShow(true);
 		toolbox.feature(getRestore());
-		option.setToolbox(toolbox);
-
+		super.setToolbox2Option(toolbox);
 	}
-
+	
 	private Restore getRestore() {
 
 		Restore restore = new Restore();
 		restore.setShow(true);
 		return restore;
 	}
+
 	
-	public static void main(String args[]) {
-		List<HashMap<String, Object>> markPoint = new ArrayList<HashMap<String, Object>>();
-
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("type", "max");
-		map.put("name", "最大值");
-
-		HashMap<String, Object> map2 = new HashMap<String, Object>();
-		map2.put("type", "min");
-		map2.put("name", "最小值");
-		markPoint.add(0, map);
-		markPoint.add(0, map2);
-		System.out.println(markPoint);
-	}
-
-	private <T> void setSeries2Option(Option option) {
-
-		Object center[] = {"50%", "60%"};
-		Pie  pie = new Pie ();
+	public void setSeries2Option() {
+		
+		List<Pie> pieList = new ArrayList<Pie>();
+		Object center[] = { "50%", "60%" };
+		Pie pie = new Pie();
 		pie.setName("饼图实例");
 		pie.setType(SeriesType.pie);
 		pie.setRadius("55%");
 		pie.setCenter(center);
 		pie.setData(this.simulationData());
-		option.series(pie);
+		pieList.add(pie);
+		super.setSeries2Option(pieList);
 	}
 	
-	private List<HashMap<String, Object>> simulationData() {
-		
+	public List<HashMap<String, Object>> simulationData() {
+
 		List<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
 		for (int i = 0; i < 4; i++) {
 			HashMap<String, Object> map = new HashMap<String, Object>();
-			map.put("value", 100  * (i + 1));
+			map.put("value", 100 * (i + 1));
 			map.put("name", "part" + (i * 1 + 1));
 			list.add(map);
 		}
 		return list;
 	}
-
 }

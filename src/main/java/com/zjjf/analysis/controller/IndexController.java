@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.abel533.echarts.Option;
-import com.zjjf.analysis.services.impl.EchartsOptionServiceImpl;
+import com.zjjf.analysis.services.impl.GraphEchartsOptionServiceImpl;
 import com.zjjf.analysis.services.impl.PieEchartsOptionServiceImpl;
 import com.zjjf.analysis.utils.ZfEcharts;
 
@@ -18,7 +18,7 @@ import com.zjjf.analysis.utils.ZfEcharts;
 public class IndexController {
 
 	@Autowired
-	private EchartsOptionServiceImpl graphOptionService;
+	private GraphEchartsOptionServiceImpl graphOptionService;
 	
 	@Autowired
 	PieEchartsOptionServiceImpl pieOptionService;
@@ -75,6 +75,12 @@ public class IndexController {
 		return "echarts/pie_chart_data";
 	}
 
+	/**
+	 * »ñÈ¡±ý×´Í¼
+	 * 
+	 * @return
+	 * @throws JsonProcessingException
+	 */
 	@RequestMapping(value = "/getPieJson", produces = "application/json; charset=utf-8")
 	public @ResponseBody String getPie_demo() throws JsonProcessingException {
 
