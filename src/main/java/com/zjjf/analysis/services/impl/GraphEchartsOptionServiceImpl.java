@@ -54,7 +54,7 @@ public class GraphEchartsOptionServiceImpl extends Echarts<Line> {
 	public void setTitle2Option() {
 		
 		Title title = new Title();
-		title.setText("2013年广州降水量与蒸发量统计报表");
+		title.setText("核心数据汇总");
 		title.setLink("http://www.tqyb.com.cn/weatherLive/climateForecast/2014-01-26/157.html");
 		title.setSubtext("www.stepday.com");
 		title.setSublink("http://www.stepday.com/myblog/?Echarts");
@@ -152,23 +152,39 @@ public class GraphEchartsOptionServiceImpl extends Echarts<Line> {
 		HashMap<String, Object> averageMap = new HashMap<String, Object>();
 		averageMap.put("type", "average");
 		averageMap.put("name", "平均值");
-
+		
 		Line line = new Line();
-		line.setName("蒸发量");
+		line.setName("商铺（家）");
 		line.setType(SeriesType.bar);
 		line.data(graphDataService.getDataModleOne());
 		line.markPoint(new MarkPoint().data(map, map2));
 		line.markLine(new MarkLine().data(averageMap));
 
 		Line line2 = new Line();
-		line2.setName("降水量");
+		line2.setName("下单");
 		line2.setType(SeriesType.bar);
 		line2.data(graphDataService.getDataModleTwo());
 		line2.markPoint(new MarkPoint().data(map, map2));
 		line2.markLine(new MarkLine().data(averageMap));
 		
+		Line line3 = new Line();
+		line3.setName("销售金额（元）");
+		line3.setType(SeriesType.bar);
+		line3.data(graphDataService.getDataModleOne());
+		line3.markPoint(new MarkPoint().data(map, map2));
+		line3.markLine(new MarkLine().data(averageMap));
+		
+		Line line4 = new Line();
+		line4.setName("费用");
+		line4.setType(SeriesType.bar);
+		line4.data(graphDataService.getDataModleTwo());
+		line4.markPoint(new MarkPoint().data(map, map2));
+		line4.markLine(new MarkLine().data(averageMap));
+		
 		lineList.add(line);
 		lineList.add(line2);
+		lineList.add(line3);
+		lineList.add(line4);
 		super.setSeries2Option(lineList);
 	}
 	
@@ -177,7 +193,7 @@ public class GraphEchartsOptionServiceImpl extends Echarts<Line> {
 		ValueAxis xAxis = new ValueAxis();
 		xAxis.setShow(true);
 		xAxis.setType(AxisType.category);
-		xAxis.data("1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月");
+		xAxis.data("福田区","南山区", "龙岗区", "坪山", "横岗", "南山转角", "龙岗转角", "石岩", "坂田", "龙华");
 		super.setXAxis2Option(xAxis);
 	}
 
