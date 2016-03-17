@@ -1,4 +1,4 @@
-package com.zjjf.analysis.beans;
+package com.zjjf.analysis.beans.analysis;
 
 import java.io.Serializable;
 

@@ -6,5 +6,9 @@
     <bean id="sqlSessionFactory_bbu" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource_bbu"/>
     </bean>
+    
+    <bean id="sqlSessionFactory_analysis" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource_analysis"/>
+    </bean>
         
 </beans>

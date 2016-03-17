@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.zjjf.analysis.beans.GlobalStatisVo;
+import com.zjjf.analysis.beans.analysis.GlobalStatisVo;
 
 @Controller
 @RequestMapping(value = "/analysis/statis")

@@ -35,6 +35,12 @@
         <property name="dataSource" ref="dataSource_bbu" />
 	</bean>
 	
+	<!-- 基于注解的事务配置 -->
+	<tx:annotation-driven transaction-manager="transactionManager_analysis"/>
+	<bean id="transactionManager_analysis" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">   
+        <property name="dataSource" ref="dataSource_analysis" />
+	</bean>
+	
     <import resource="conf/datasource/dataSource.xml"/>
     <import resource="conf/sessionfactory/sqlSessionFactory.xml"/>
     <import resource="conf/scan/mapperScannerConfigurer.xml"/>

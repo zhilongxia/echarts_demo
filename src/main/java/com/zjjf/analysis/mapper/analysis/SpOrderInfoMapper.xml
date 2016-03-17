@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zjjf.analysis.mapper.analysis.SpOrderInfoMapper" >
+
+  <resultMap id="BaseResultMap" type="com.zjjf.analysis.beans.analysis.SpOrderInfo" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="pId" property="pId" jdbcType="VARCHAR" />
+    <result column="orderId" property="orderId" jdbcType="VARCHAR" />
+    <result column="tradeNo" property="tradeNo" jdbcType="VARCHAR" />
+    <result column="addTime" property="addTime" jdbcType="TIMESTAMP" />
+    <result column="goodsPrice" property="goodsPrice" jdbcType="DECIMAL" />
+    <result column="orderPrice" property="orderPrice" jdbcType="DECIMAL" />
+    <result column="rebate" property="rebate" jdbcType="DECIMAL" />
+    <result column="coupon" property="coupon" jdbcType="DECIMAL" />
+    <result column="couponId" property="couponId" jdbcType="VARCHAR" />
+    <result column="kfId" property="kfId" jdbcType="VARCHAR" />
+    <result column="kfName" property="kfName" jdbcType="VARCHAR" />
+    <result column="kfnote" property="kfnote" jdbcType="VARCHAR" />
+    <result column="kfStatus" property="kfStatus" jdbcType="TINYINT" />
+    <result column="kfCheckTime" property="kfCheckTime" jdbcType="TIMESTAMP" />
+    <result column="userId" property="userId" jdbcType="VARCHAR" />
+    <result column="userName" property="userName" jdbcType="VARCHAR" />
+    <result column="userRemark" property="userRemark" jdbcType="VARCHAR" />
+    <result column="storeId" property="storeId" jdbcType="INTEGER" />
+    <result column="storeName" property="storeName" jdbcType="VARCHAR" />
+    <result column="consignee" property="consignee" jdbcType="VARCHAR" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="userTel" property="userTel" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="evaluation" property="evaluation" jdbcType="TINYINT" />
+    <result column="supportStatus" property="supportStatus" jdbcType="TINYINT" />
+    <result column="supportmetho" property="supportmetho" jdbcType="TINYINT" />
+    <result column="supportTime" property="supportTime" jdbcType="TIMESTAMP" />
+    <result column="ordertype" property="ordertype" jdbcType="TINYINT" />
+    <result column="closemsg" property="closemsg" jdbcType="VARCHAR" />
+    <result column="gaveTime" property="gaveTime" jdbcType="TIMESTAMP" />
+    <result column="supplierId" property="supplierId" jdbcType="VARCHAR" />
+    <result column="supplierTel" property="supplierTel" jdbcType="VARCHAR" />
+    <result column="supplierNam" property="supplierNam" jdbcType="VARCHAR" />
+    <result column="spStatus" property="spStatus" jdbcType="TINYINT" />
+    <result column="spRemark" property="spRemark" jdbcType="VARCHAR" />
+    <result column="spCheckTime" property="spCheckTime" jdbcType="TIMESTAMP" />
+    <result column="printTime" property="printTime" jdbcType="TIMESTAMP" />
+    <result column="deliveryTime" property="deliveryTime" jdbcType="TIMESTAMP" />
+    <result column="getOrderTime" property="getOrderTime" jdbcType="TIMESTAMP" />
+    <result column="ackTime" property="ackTime" jdbcType="TIMESTAMP" />
+    <result column="ackCode" property="ackCode" jdbcType="SMALLINT" />
+    <result column="isStar" property="isStar" jdbcType="TINYINT" />
+    <result column="sendDate" property="sendDate" jdbcType="DATE" />
+    <result column="fistTime" property="fistTime" jdbcType="TIMESTAMP" />
+    <result column="endTime" property="endTime" jdbcType="TIMESTAMP" />
+    <result column="isDelete" property="isDelete" jdbcType="BIT" />
+    <result column="qrcodeurl" property="qrcodeurl" jdbcType="VARCHAR" />
+    <result column="isRemind" property="isRemind" jdbcType="TINYINT" />
+    <result column="zmaoli" property="zmaoli" jdbcType="DECIMAL" />
+    <result column="zfee" property="zfee" jdbcType="DECIMAL" />
+    <result column="col1" property="col1" jdbcType="VARCHAR" />
+    <result column="col2" property="col2" jdbcType="VARCHAR" />
+    <result column="col3" property="col3" jdbcType="VARCHAR" />
+    <result column="acId" property="acId" jdbcType="VARCHAR" />
+    <result column="acStatus" property="acStatus" jdbcType="INTEGER" />
+    <result column="acRemark" property="acRemark" jdbcType="VARCHAR" />
+    <result column="acCheckTime" property="acCheckTime" jdbcType="TIMESTAMP" />
+    <result column="acSettleTime" property="acSettleTime" jdbcType="TIMESTAMP" />
+    <result column="acPayTime" property="acPayTime" jdbcType="TIMESTAMP" />
+    <result column="level" property="level" jdbcType="TINYINT" />
+    <result column="freight" property="freight" jdbcType="DECIMAL" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    id, pId, orderId, tradeNo, addTime, goodsPrice, orderPrice, rebate, coupon, couponId, 
+    kfId, kfName, kfnote, kfStatus, kfCheckTime, userId, userName, userRemark, storeId, 
+    storeName, consignee, mobile, userTel, address, status, evaluation, supportStatus, 
+    supportmetho, supportTime, ordertype, closemsg, gaveTime, supplierId, supplierTel, 
+    supplierNam, spStatus, spRemark, spCheckTime, printTime, deliveryTime, getOrderTime, 
+    ackTime, ackCode, isStar, sendDate, fistTime, endTime, isDelete, qrcodeurl, isRemind, 
+    zmaoli, zfee, col1, col2, col3, acId, acStatus, acRemark, acCheckTime, acSettleTime, 
+    acPayTime, level, freight
+  </sql>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from SpOrderInfo
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  
+</mapper>
