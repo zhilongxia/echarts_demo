@@ -26,11 +26,12 @@
     <result column="coupon" property="coupon" jdbcType="DECIMAL" />
     <result column="couponId" property="couponId" jdbcType="VARCHAR" />
     <result column="addTime" property="addTime" jdbcType="TIMESTAMP" />
+    <result column="createTime" property="createTime" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, org_pk_id, orderId, tradeNo, goodsPrice, orderPrice, kfId, consignee, mobile, 
     status, supportmetho, supplierId, isDelete, zmaoli, zfee, acStatus, rebate, supportStatus, 
-    level, pId, freight, coupon, couponId, addTime
+    level, pId, freight, coupon, couponId, addTime, createTime
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -50,7 +51,7 @@
       isDelete, zmaoli, zfee, 
       acStatus, rebate, supportStatus, 
       level, pId, freight, 
-      coupon, couponId, addTime
+      coupon, couponId, addTime, createTime
       )
     values (#{id,jdbcType=INTEGER}, #{org_pk_id,jdbcType=VARCHAR}, #{orderId,jdbcType=VARCHAR}, 
       #{tradeNo,jdbcType=VARCHAR}, #{goodsPrice,jdbcType=DECIMAL}, #{orderPrice,jdbcType=DECIMAL}, 
@@ -59,7 +60,8 @@
       #{isDelete,jdbcType=BIT}, #{zmaoli,jdbcType=DECIMAL}, #{zfee,jdbcType=DECIMAL}, 
       #{acStatus,jdbcType=INTEGER}, #{rebate,jdbcType=DECIMAL}, #{supportStatus,jdbcType=TINYINT}, 
       #{level,jdbcType=TINYINT}, #{pId,jdbcType=VARCHAR}, #{freight,jdbcType=DECIMAL}, 
-      #{coupon,jdbcType=DECIMAL}, #{couponId,jdbcType=VARCHAR}, #{addTime,jdbcType=TIMESTAMP}
+      #{coupon,jdbcType=DECIMAL}, #{couponId,jdbcType=VARCHAR}, #{addTime,jdbcType=TIMESTAMP},
+      #{createTime,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.zjjf.analysis.beans.local.AnaSporderinfo" >

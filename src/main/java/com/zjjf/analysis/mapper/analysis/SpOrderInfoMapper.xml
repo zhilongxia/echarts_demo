@@ -66,6 +66,7 @@
     <result column="acPayTime" property="acPayTime" jdbcType="TIMESTAMP" />
     <result column="level" property="level" jdbcType="TINYINT" />
     <result column="freight" property="freight" jdbcType="DECIMAL" />
+    <result column="createTime" property="createTime" jdbcType="INTEGER" />
   </resultMap>
   
   <sql id="Base_Column_List" >
@@ -84,6 +85,12 @@
     <include refid="Base_Column_List" />
     from SpOrderInfo
     where id = #{id,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByIndex" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select <include refid="Base_Column_List" />, UNIX_TIMESTAMP(ADDTIME) as "createTime" from SpOrderInfo 
+    where UNIX_TIMESTAMP(addTime) &gt; #{addTime}
+    order by addTime limit 10
   </select>
   
 </mapper>

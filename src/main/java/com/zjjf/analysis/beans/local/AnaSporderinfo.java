@@ -4,244 +4,255 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class AnaSporderinfo {
-	
-    private Integer id;
 
-    private String org_pk_id;
+	private Integer id;
 
-    private String orderId;
+	private String org_pk_id;
 
-    private String tradeNo;
+	private String orderId;
 
-    private BigDecimal goodsPrice;
+	private String tradeNo;
 
-    private BigDecimal orderPrice;
+	private BigDecimal goodsPrice;
 
-    private String kfId;
+	private BigDecimal orderPrice;
 
-    private String consignee;
+	private String kfId;
 
-    private String mobile;
+	private String consignee;
 
-    private Byte status;
+	private String mobile;
 
-    private Byte supportmetho;
+	private Byte status;
 
-    private String supplierId;
+	private Byte supportmetho;
 
-    private Boolean isDelete;
+	private String supplierId;
 
-    private BigDecimal zmaoli;
+	private Boolean isDelete;
 
-    private BigDecimal zfee;
+	private BigDecimal zmaoli;
 
-    private Integer acStatus;
+	private BigDecimal zfee;
 
-    private BigDecimal rebate;
+	private Integer acStatus;
 
-    private Byte supportStatus;
+	private BigDecimal rebate;
 
-    private Byte level;
+	private Byte supportStatus;
 
-    private String pId;
+	private Byte level;
 
-    private BigDecimal freight;
+	private String pId;
 
-    private BigDecimal coupon;
+	private BigDecimal freight;
 
-    private String couponId;
+	private BigDecimal coupon;
 
-    private Date addTime;
+	private String couponId;
 
-    public Integer getId() {
-        return id;
-    }
+	private Date addTime;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	private Long createTime;
 
-    public String getOrg_pk_id() {
-        return org_pk_id;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public void setOrg_pk_id(String org_pk_id) {
-        this.org_pk_id = org_pk_id == null ? null : org_pk_id.trim();
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public String getOrderId() {
-        return orderId;
-    }
+	public String getOrg_pk_id() {
+		return org_pk_id;
+	}
 
-    public void setOrderId(String orderId) {
-        this.orderId = orderId == null ? null : orderId.trim();
-    }
+	public void setOrg_pk_id(String org_pk_id) {
+		this.org_pk_id = org_pk_id == null ? null : org_pk_id.trim();
+	}
 
-    public String getTradeNo() {
-        return tradeNo;
-    }
+	public String getOrderId() {
+		return orderId;
+	}
 
-    public void setTradeNo(String tradeNo) {
-        this.tradeNo = tradeNo == null ? null : tradeNo.trim();
-    }
+	public void setOrderId(String orderId) {
+		this.orderId = orderId == null ? null : orderId.trim();
+	}
 
-    public BigDecimal getGoodsPrice() {
-        return goodsPrice;
-    }
+	public String getTradeNo() {
+		return tradeNo;
+	}
 
-    public void setGoodsPrice(BigDecimal goodsPrice) {
-        this.goodsPrice = goodsPrice;
-    }
+	public void setTradeNo(String tradeNo) {
+		this.tradeNo = tradeNo == null ? null : tradeNo.trim();
+	}
 
-    public BigDecimal getOrderPrice() {
-        return orderPrice;
-    }
+	public BigDecimal getGoodsPrice() {
+		return goodsPrice;
+	}
 
-    public void setOrderPrice(BigDecimal orderPrice) {
-        this.orderPrice = orderPrice;
-    }
+	public void setGoodsPrice(BigDecimal goodsPrice) {
+		this.goodsPrice = goodsPrice;
+	}
 
-    public String getKfId() {
-        return kfId;
-    }
+	public BigDecimal getOrderPrice() {
+		return orderPrice;
+	}
 
-    public void setKfId(String kfId) {
-        this.kfId = kfId == null ? null : kfId.trim();
-    }
+	public void setOrderPrice(BigDecimal orderPrice) {
+		this.orderPrice = orderPrice;
+	}
 
-    public String getConsignee() {
-        return consignee;
-    }
+	public String getKfId() {
+		return kfId;
+	}
+
+	public void setKfId(String kfId) {
+		this.kfId = kfId == null ? null : kfId.trim();
+	}
+
+	public String getConsignee() {
+		return consignee;
+	}
+
+	public void setConsignee(String consignee) {
+		this.consignee = consignee == null ? null : consignee.trim();
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile == null ? null : mobile.trim();
+	}
+
+	public Byte getStatus() {
+		return status;
+	}
+
+	public void setStatus(Byte status) {
+		this.status = status;
+	}
+
+	public Byte getSupportmetho() {
+		return supportmetho;
+	}
+
+	public void setSupportmetho(Byte supportmetho) {
+		this.supportmetho = supportmetho;
+	}
+
+	public String getSupplierId() {
+		return supplierId;
+	}
+
+	public void setSupplierId(String supplierId) {
+		this.supplierId = supplierId == null ? null : supplierId.trim();
+	}
+
+	public Boolean getIsDelete() {
+		return isDelete;
+	}
+
+	public void setIsDelete(Boolean isDelete) {
+		this.isDelete = isDelete;
+	}
 
-    public void setConsignee(String consignee) {
-        this.consignee = consignee == null ? null : consignee.trim();
-    }
+	public BigDecimal getZmaoli() {
+		return zmaoli;
+	}
 
-    public String getMobile() {
-        return mobile;
-    }
+	public void setZmaoli(BigDecimal zmaoli) {
+		this.zmaoli = zmaoli;
+	}
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile == null ? null : mobile.trim();
-    }
+	public BigDecimal getZfee() {
+		return zfee;
+	}
 
-    public Byte getStatus() {
-        return status;
-    }
+	public void setZfee(BigDecimal zfee) {
+		this.zfee = zfee;
+	}
 
-    public void setStatus(Byte status) {
-        this.status = status;
-    }
+	public Integer getAcStatus() {
+		return acStatus;
+	}
 
-    public Byte getSupportmetho() {
-        return supportmetho;
-    }
+	public void setAcStatus(Integer acStatus) {
+		this.acStatus = acStatus;
+	}
 
-    public void setSupportmetho(Byte supportmetho) {
-        this.supportmetho = supportmetho;
-    }
+	public BigDecimal getRebate() {
+		return rebate;
+	}
 
-    public String getSupplierId() {
-        return supplierId;
-    }
+	public void setRebate(BigDecimal rebate) {
+		this.rebate = rebate;
+	}
 
-    public void setSupplierId(String supplierId) {
-        this.supplierId = supplierId == null ? null : supplierId.trim();
-    }
+	public Byte getSupportStatus() {
+		return supportStatus;
+	}
 
-    public Boolean getIsDelete() {
-        return isDelete;
-    }
+	public void setSupportStatus(Byte supportStatus) {
+		this.supportStatus = supportStatus;
+	}
 
-    public void setIsDelete(Boolean isDelete) {
-        this.isDelete = isDelete;
-    }
+	public Byte getLevel() {
+		return level;
+	}
 
-    public BigDecimal getZmaoli() {
-        return zmaoli;
-    }
+	public void setLevel(Byte level) {
+		this.level = level;
+	}
 
-    public void setZmaoli(BigDecimal zmaoli) {
-        this.zmaoli = zmaoli;
-    }
+	public String getpId() {
+		return pId;
+	}
 
-    public BigDecimal getZfee() {
-        return zfee;
-    }
+	public void setpId(String pId) {
+		this.pId = pId == null ? null : pId.trim();
+	}
 
-    public void setZfee(BigDecimal zfee) {
-        this.zfee = zfee;
-    }
+	public BigDecimal getFreight() {
+		return freight;
+	}
 
-    public Integer getAcStatus() {
-        return acStatus;
-    }
+	public void setFreight(BigDecimal freight) {
+		this.freight = freight;
+	}
 
-    public void setAcStatus(Integer acStatus) {
-        this.acStatus = acStatus;
-    }
+	public BigDecimal getCoupon() {
+		return coupon;
+	}
 
-    public BigDecimal getRebate() {
-        return rebate;
-    }
+	public void setCoupon(BigDecimal coupon) {
+		this.coupon = coupon;
+	}
 
-    public void setRebate(BigDecimal rebate) {
-        this.rebate = rebate;
-    }
+	public String getCouponId() {
+		return couponId;
+	}
 
-    public Byte getSupportStatus() {
-        return supportStatus;
-    }
+	public void setCouponId(String couponId) {
+		this.couponId = couponId == null ? null : couponId.trim();
+	}
 
-    public void setSupportStatus(Byte supportStatus) {
-        this.supportStatus = supportStatus;
-    }
+	public Date getAddTime() {
+		return addTime;
+	}
 
-    public Byte getLevel() {
-        return level;
-    }
+	public void setAddTime(Date addTime) {
+		this.addTime = addTime;
+	}
 
-    public void setLevel(Byte level) {
-        this.level = level;
-    }
+	public Long getCreateTime() {
+		return createTime;
+	}
 
-    public String getpId() {
-        return pId;
-    }
+	public void setCreateTime(Long createTime) {
+		this.createTime = createTime;
+	}
 
-    public void setpId(String pId) {
-        this.pId = pId == null ? null : pId.trim();
-    }
-
-    public BigDecimal getFreight() {
-        return freight;
-    }
-
-    public void setFreight(BigDecimal freight) {
-        this.freight = freight;
-    }
-
-    public BigDecimal getCoupon() {
-        return coupon;
-    }
-
-    public void setCoupon(BigDecimal coupon) {
-        this.coupon = coupon;
-    }
-
-    public String getCouponId() {
-        return couponId;
-    }
-
-    public void setCouponId(String couponId) {
-        this.couponId = couponId == null ? null : couponId.trim();
-    }
-
-    public Date getAddTime() {
-        return addTime;
-    }
-
-    public void setAddTime(Date addTime) {
-        this.addTime = addTime;
-    }
 }

@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.zjjf.analysis.services.SpOrderInfoServiceJobImpl;
 
-public class MessageTest {
+public class AnaSpOrderDetailJob {
 
 	private ApplicationContext context = null;
 

@@ -130,6 +130,8 @@ public class SpOrderInfo {
 	private Byte level;
 
 	private BigDecimal freight;
+	
+	private Integer createTime;
 
 	public String getId() {
 		return id;
@@ -633,5 +635,13 @@ public class SpOrderInfo {
 
 	public void setFreight(BigDecimal freight) {
 		this.freight = freight;
+	}
+
+	public Integer getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Integer createTime) {
+		this.createTime = createTime;
 	}
 }
