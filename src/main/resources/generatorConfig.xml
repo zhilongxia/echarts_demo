@@ -27,7 +27,7 @@
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 
-		<table tableName="sporderdetail" domainObjectName="Sporderdetail"
+		<table tableName="ana_spgroupmap" domainObjectName="Anaspgroupmap"
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false">

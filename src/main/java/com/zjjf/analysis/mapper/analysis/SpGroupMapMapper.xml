@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.corner.core.dao.SpGroupMapMapper" >
+  <resultMap id="BaseResultMap" type="com.corner.core.beans.SpGroupMapKey" >
+    <id column="groupId" property="groupId" jdbcType="INTEGER" />
+    <id column="spId" property="spId" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="com.corner.core.beans.SpGroupMapKey" >
+    delete from SpGroupMap
+    where groupId = #{groupId,jdbcType=INTEGER}
+      and spId = #{spId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.corner.core.beans.SpGroupMapKey" >
+    insert into SpGroupMap (groupId, spId)
+    values (#{groupId,jdbcType=INTEGER}, #{spId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.corner.core.beans.SpGroupMapKey" >
+    insert into SpGroupMap
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="groupId != null" >
+        groupId,
+      </if>
+      <if test="spId != null" >
+        spId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="groupId != null" >
+        #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="spId != null" >
+        #{spId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

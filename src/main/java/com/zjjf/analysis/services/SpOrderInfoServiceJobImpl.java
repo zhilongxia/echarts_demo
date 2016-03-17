@@ -20,11 +20,16 @@ public class SpOrderInfoServiceJobImpl {
 	@Autowired
 	private AnaSporderinfoMapper spOrderInfoMapper;
 
-	public void excuse() {
+	public void excuse_orderInfo() {
 
+		long beginTime = System.currentTimeMillis();
 		Integer addTimeIndex = this.getSpOrderInfoIndex_from_db();
+		int i = 0;
 		while (true) {
+			long beginquere = System.currentTimeMillis();
 			List<SpOrderInfo> spOrderInfoList = orgSpOrderInfoMapper.selectByIndex(addTimeIndex);
+			i++;
+			System.out.println("第" + i + "次查询，spent time：" + (System.currentTimeMillis() - beginquere) + "ms!");
 			if (spOrderInfoList.size() == 0) {
 				break;
 			}
@@ -33,6 +38,7 @@ public class SpOrderInfoServiceJobImpl {
 				addTimeIndex = spOrderInfo.getCreateTime();
 			}
 		}
+		System.out.println("总共耗时，spent time：" + (System.currentTimeMillis() - beginTime) + "ms!");
 	}
 
 	private void push_orderInfo_to_analysis(SpOrderInfo spOrderInfo) {
@@ -70,4 +76,5 @@ public class SpOrderInfoServiceJobImpl {
 
 		return 0;
 	}
+
 }

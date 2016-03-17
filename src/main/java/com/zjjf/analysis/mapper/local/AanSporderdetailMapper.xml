@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zjjf.analysis.mapper.local.AanSporderdetailMapper" >
+
+  <resultMap id="BaseResultMap" type="com.zjjf.analysis.beans.local.AanSporderdetail" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="org_pk_id" property="org_pk_id" jdbcType="VARCHAR" />
+    <result column="p_orderId" property="p_orderId" jdbcType="VARCHAR" />
+    <result column="orderId" property="orderId" jdbcType="VARCHAR" />
+    <result column="itemId" property="itemId" jdbcType="VARCHAR" />
+    <result column="quantity" property="quantity" jdbcType="SMALLINT" />
+    <result column="totalPrice" property="totalPrice" jdbcType="DECIMAL" />
+    <result column="plantMemPrice" property="plantMemPrice" jdbcType="DECIMAL" />
+    <result column="storeId" property="storeId" jdbcType="INTEGER" />
+    <result column="addTime" property="addTime" jdbcType="TIMESTAMP" />
+    <result column="fee" property="fee" jdbcType="DECIMAL" />
+    <result column="spGroupId" property="spGroupId" jdbcType="INTEGER" />
+    <result column="spId" property="spId" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    id, org_pk_id, p_orderId, orderId, itemId, quantity, totalPrice, plantMemPrice, storeId, 
+    addTime, fee, spGroupId, spId
+  </sql>
+  
+  <insert id="insert" parameterType="com.zjjf.analysis.beans.local.AanSporderdetail" >
+    insert into ana_sporderdetail (id, org_pk_id, p_orderId, 
+      orderId, itemId, quantity, 
+      totalPrice, plantMemPrice, storeId, 
+      addTime, fee, spGroupId, 
+      spId)
+    values (#{id,jdbcType=VARCHAR}, #{org_pk_id,jdbcType=VARCHAR}, #{p_orderId,jdbcType=VARCHAR}, 
+      #{orderId,jdbcType=VARCHAR}, #{itemId,jdbcType=VARCHAR}, #{quantity,jdbcType=SMALLINT}, 
+      #{totalPrice,jdbcType=DECIMAL}, #{plantMemPrice,jdbcType=DECIMAL}, #{storeId,jdbcType=INTEGER}, 
+      #{addTime,jdbcType=TIMESTAMP}, #{fee,jdbcType=DECIMAL}, #{spGroupId,jdbcType=INTEGER}, 
+      #{spId,jdbcType=VARCHAR})
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.zjjf.analysis.beans.local.AanSporderdetail" >
+    insert into ana_sporderdetail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="org_pk_id != null" >
+        org_pk_id,
+      </if>
+      <if test="p_orderId != null" >
+        p_orderId,
+      </if>
+      <if test="orderId != null" >
+        orderId,
+      </if>
+      <if test="itemId != null" >
+        itemId,
+      </if>
+      <if test="quantity != null" >
+        quantity,
+      </if>
+      <if test="totalPrice != null" >
+        totalPrice,
+      </if>
+      <if test="plantMemPrice != null" >
+        plantMemPrice,
+      </if>
+      <if test="storeId != null" >
+        storeId,
+      </if>
+      <if test="addTime != null" >
+        addTime,
+      </if>
+      <if test="fee != null" >
+        fee,
+      </if>
+      <if test="spGroupId != null" >
+        spGroupId,
+      </if>
+      <if test="spId != null" >
+        spId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="org_pk_id != null" >
+        #{org_pk_id,jdbcType=VARCHAR},
+      </if>
+      <if test="p_orderId != null" >
+        #{p_orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null" >
+        #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="itemId != null" >
+        #{itemId,jdbcType=VARCHAR},
+      </if>
+      <if test="quantity != null" >
+        #{quantity,jdbcType=SMALLINT},
+      </if>
+      <if test="totalPrice != null" >
+        #{totalPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="plantMemPrice != null" >
+        #{plantMemPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="storeId != null" >
+        #{storeId,jdbcType=INTEGER},
+      </if>
+      <if test="addTime != null" >
+        #{addTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fee != null" >
+        #{fee,jdbcType=DECIMAL},
+      </if>
+      <if test="spGroupId != null" >
+        #{spGroupId,jdbcType=INTEGER},
+      </if>
+      <if test="spId != null" >
+        #{spId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,24 +1,15 @@
-package echarts_demo.job.orders;
+package com.zjjf.scheduled.orders;
 
-import org.junit.Before;
-import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.zjjf.analysis.services.SpOrderInfoServiceJobImpl;
 
+@SuppressWarnings("resource")
 public class AnaSpOrderInfoJob {
 
-	private ApplicationContext context = null;
-
-	@Before
-	public void setUp() throws Exception {
-		context = new ClassPathXmlApplicationContext("applicationContext.xml");
-	}
-
-	@Test
-	public void should_send_a_amq_message() throws Exception {
-
+	public static void main(String args[]){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		SpOrderInfoServiceJobImpl spOrderInfoServcie = (SpOrderInfoServiceJobImpl) context.getBean("spOrderInfoServiceJobImpl");
 		spOrderInfoServcie.excuse_orderInfo();
 	}
