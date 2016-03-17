@@ -30,7 +30,6 @@
     <result column="col1" property="col1" jdbcType="VARCHAR" />
     <result column="col2" property="col2" jdbcType="VARCHAR" />
     <result column="col3" property="col3" jdbcType="VARCHAR" />
-    <result column="createTime" property="createTime" jdbcType="INTEGER" />
   </resultMap>
   
   <sql id="Base_Column_List" >
@@ -40,10 +39,8 @@
   </sql>
   
     
-  <select id="selectByIndex" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select <include refid="Base_Column_List" />, UNIX_TIMESTAMP(addTime) as "createTime" from SpOrderDetail 
-    where UNIX_TIMESTAMP(addTime) &gt; #{addTime}
-    order by addTime limit 1000
+  <select id="selectOrderDetailByOrderId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select <include refid="Base_Column_List" /> from SpOrderDetail where orderId2 = #{orderId}
   </select>
 
 </mapper>

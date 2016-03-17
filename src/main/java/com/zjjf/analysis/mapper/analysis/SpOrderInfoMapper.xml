@@ -90,7 +90,7 @@
   <select id="selectByIndex" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select <include refid="Base_Column_List" />, UNIX_TIMESTAMP(ADDTIME) as "createTime" from SpOrderInfo 
     where UNIX_TIMESTAMP(addTime) &gt; #{addTime}
-    order by addTime limit 1000
+    order by addTime limit 500
   </select>
   
 </mapper>

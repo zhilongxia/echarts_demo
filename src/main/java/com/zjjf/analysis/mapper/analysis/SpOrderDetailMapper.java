@@ -6,5 +6,5 @@ import com.zjjf.analysis.beans.analysis.SpOrderDetail;
 
 public interface SpOrderDetailMapper {
 
-	List<SpOrderDetail> selectByIndex(Integer addTimeIndex);
+	List<SpOrderDetail> selectOrderDetailByOrderId(String orderId);
 }

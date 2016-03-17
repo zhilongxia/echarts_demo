@@ -7,7 +7,7 @@ public class AanSporderdetail {
 
 	private String id;
 
-	private String org_pk_id;
+	private Integer ana_orderId;
 
 	private String p_orderId;
 
@@ -41,12 +41,13 @@ public class AanSporderdetail {
 		this.id = id == null ? null : id.trim();
 	}
 
-	public String getOrg_pk_id() {
-		return org_pk_id;
+
+	public Integer getAna_orderId() {
+		return ana_orderId;
 	}
 
-	public void setOrg_pk_id(String org_pk_id) {
-		this.org_pk_id = org_pk_id == null ? null : org_pk_id.trim();
+	public void setAna_orderId(Integer ana_orderId) {
+		this.ana_orderId = ana_orderId;
 	}
 
 	public String getP_orderId() {

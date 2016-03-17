@@ -43,7 +43,8 @@
     delete from ana_sporderinfo
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.zjjf.analysis.beans.local.AnaSporderinfo" >
+  
+  <insert id="insert"  useGeneratedKeys="true" keyProperty="id" parameterType="com.zjjf.analysis.beans.local.AnaSporderinfo" >
     insert into ana_sporderinfo (id, org_pk_id, orderId, 
       tradeNo, goodsPrice, orderPrice, 
       kfId, consignee, mobile, 

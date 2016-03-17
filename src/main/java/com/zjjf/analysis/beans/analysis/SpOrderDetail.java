@@ -59,8 +59,6 @@ public class SpOrderDetail {
 
 	private String col3;
 
-	private Integer createTime;
-
 	public String getId() {
 		return id;
 	}
@@ -276,13 +274,4 @@ public class SpOrderDetail {
 	public void setCol3(String col3) {
 		this.col3 = col3 == null ? null : col3.trim();
 	}
-
-	public Integer getCreateTime() {
-		return createTime;
-	}
-
-	public void setCreateTime(Integer createTime) {
-		this.createTime = createTime;
-	}
-
 }
