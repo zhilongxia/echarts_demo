@@ -22,6 +22,7 @@
     <result column="mark" property="mark" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="TINYINT" />
     <result column="isDelete" property="isDelete" jdbcType="BIT" />
+    <result column="createTime" property="createTime" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, itemBaseId, goodName, managerId, groupId, areaId, areaPrice, areaName, zjjfPrice, 
@@ -30,6 +31,8 @@
   </sql>
   
   <select id="selectByIndex" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select <include refid="Base_Column_List" /> from `ItemBase` where id &gt; #{id} order by id limit 500
+    select <include refid="Base_Column_List" />, UNIX_TIMESTAMP(addTime) as "createTime" from `ScmsItem` 
+    where UNIX_TIMESTAMP(addTime) &gt; #{addTime}
+    order by addTime limit 500
   </select>
 </mapper>
