@@ -28,7 +28,7 @@
 		</javaClientGenerator>
 		
 		
-<!-- 		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.11:3316/dataImport" userId="gg" password="gg2802" />
+<!--  		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.11:3316/dataImport" userId="gg" password="gg2802" />
 		
 		<javaModelGenerator targetPackage="com.zjjf.analysis.beans.analysis"
 			targetProject="echarts_demo">
@@ -45,12 +45,12 @@
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator> -->
 
-		<table tableName="ItemBase" domainObjectName="ItemBase"
+		<table tableName="base_itembase" domainObjectName="BaseItembase"
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false">
 			<property name="useActualColumnNames" value="true" />
-		</table>
+		</table> 
 		
 	</context>
 </generatorConfiguration>

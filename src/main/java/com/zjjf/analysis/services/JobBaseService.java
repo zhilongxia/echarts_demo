@@ -10,6 +10,9 @@ public class JobBaseService {
 		switch (key) {
 		case "itemBase":
 			return 0;
+
+		case "scmsItem":
+			return 0;
 		default:
 			break;
 		}

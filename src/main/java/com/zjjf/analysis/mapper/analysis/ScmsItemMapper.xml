@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zjjf.analysis.mapper.analysis.ScmsItemMapper" >
+  <resultMap id="BaseResultMap" type="com.zjjf.analysis.beans.analysis.ScmsItem" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="itemBaseId" property="itemBaseId" jdbcType="INTEGER" />
+    <result column="goodName" property="goodName" jdbcType="VARCHAR" />
+    <result column="managerId" property="managerId" jdbcType="VARCHAR" />
+    <result column="groupId" property="groupId" jdbcType="VARCHAR" />
+    <result column="areaId" property="areaId" jdbcType="INTEGER" />
+    <result column="areaPrice" property="areaPrice" jdbcType="DECIMAL" />
+    <result column="areaName" property="areaName" jdbcType="VARCHAR" />
+    <result column="zjjfPrice" property="zjjfPrice" jdbcType="DECIMAL" />
+    <result column="marketPrice" property="marketPrice" jdbcType="DECIMAL" />
+    <result column="year" property="year" jdbcType="INTEGER" />
+    <result column="month" property="month" jdbcType="INTEGER" />
+    <result column="miniumId" property="miniumId" jdbcType="VARCHAR" />
+    <result column="sales" property="sales" jdbcType="INTEGER" />
+    <result column="ordId" property="ordId" jdbcType="INTEGER" />
+    <result column="addTime" property="addTime" jdbcType="TIMESTAMP" />
+    <result column="updateTime" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="mark" property="mark" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="isDelete" property="isDelete" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, itemBaseId, goodName, managerId, groupId, areaId, areaPrice, areaName, zjjfPrice, 
+    marketPrice, year, month, miniumId, sales, ordId, addTime, updateTime, mark, status, 
+    isDelete
+  </sql>
+  
+  <select id="selectByIndex" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select <include refid="Base_Column_List" /> from `ItemBase` where id &gt; #{id} order by id limit 500
+  </select>
+</mapper>

@@ -59,7 +59,7 @@ public class ItemServiceJobImpl extends JobBaseService {
 		// baseItembaseMapper.insert(record);
 		BeanUtils.copyProperties(itemBase, recode);
 		recode.setId(null);
-		recode.setOrg_pk_id(itemBase.getId() + "");
+		recode.setOrg_pk_id(itemBase.getId());
 		recode.setCreateTime(new Date().getTime() / 1000L);
 		baseItembaseMapper.insert(recode);
 	}

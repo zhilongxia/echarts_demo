@@ -6,7 +6,7 @@
     <result column="org_pk_id" property="org_pk_id" jdbcType="VARCHAR" />
     <result column="cateId" property="cateId" jdbcType="INTEGER" />
     <result column="mdseId" property="mdseId" jdbcType="VARCHAR" />
-    <result column="ordId" property="ordId" jdbcType="INTEGER" />
+    <result column="ordId" property="ordId" jdbcType="TINYINT" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="brand" property="brand" jdbcType="VARCHAR" />
     <result column="spec" property="spec" jdbcType="VARCHAR" />
@@ -84,7 +84,7 @@
       quanNm, createTime, info
       )
     values (#{id,jdbcType=INTEGER}, #{org_pk_id,jdbcType=VARCHAR}, #{cateId,jdbcType=INTEGER}, 
-      #{mdseId,jdbcType=VARCHAR}, #{ordId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{mdseId,jdbcType=VARCHAR}, #{ordId,jdbcType=TINYINT}, #{name,jdbcType=VARCHAR}, 
       #{brand,jdbcType=VARCHAR}, #{spec,jdbcType=VARCHAR}, #{imgS,jdbcType=VARCHAR}, 
       #{imgB,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, #{sales,jdbcType=INTEGER}, 
       #{news,jdbcType=BIT}, #{tuiJian,jdbcType=BIT}, #{addTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
@@ -242,7 +242,7 @@
         #{mdseId,jdbcType=VARCHAR},
       </if>
       <if test="ordId != null" >
-        #{ordId,jdbcType=INTEGER},
+        #{ordId,jdbcType=TINYINT},
       </if>
       <if test="name != null" >
         #{name,jdbcType=VARCHAR},
@@ -370,7 +370,7 @@
         mdseId = #{mdseId,jdbcType=VARCHAR},
       </if>
       <if test="ordId != null" >
-        ordId = #{ordId,jdbcType=INTEGER},
+        ordId = #{ordId,jdbcType=TINYINT},
       </if>
       <if test="name != null" >
         name = #{name,jdbcType=VARCHAR},
@@ -491,7 +491,7 @@
     set org_pk_id = #{org_pk_id,jdbcType=VARCHAR},
       cateId = #{cateId,jdbcType=INTEGER},
       mdseId = #{mdseId,jdbcType=VARCHAR},
-      ordId = #{ordId,jdbcType=INTEGER},
+      ordId = #{ordId,jdbcType=TINYINT},
       name = #{name,jdbcType=VARCHAR},
       brand = #{brand,jdbcType=VARCHAR},
       spec = #{spec,jdbcType=VARCHAR},
@@ -536,7 +536,7 @@
     set org_pk_id = #{org_pk_id,jdbcType=VARCHAR},
       cateId = #{cateId,jdbcType=INTEGER},
       mdseId = #{mdseId,jdbcType=VARCHAR},
-      ordId = #{ordId,jdbcType=INTEGER},
+      ordId = #{ordId,jdbcType=TINYINT},
       name = #{name,jdbcType=VARCHAR},
       brand = #{brand,jdbcType=VARCHAR},
       spec = #{spec,jdbcType=VARCHAR},
