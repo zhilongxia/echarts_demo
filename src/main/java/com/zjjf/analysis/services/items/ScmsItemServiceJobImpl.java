@@ -25,11 +25,11 @@ public class ScmsItemServiceJobImpl extends JobBaseService {
 	public void excuse() {
 
 		long beginTime = System.currentTimeMillis();
-		Integer addTimeIndex = getIndex_from_db("");
+		String index = _getIndex_from_db("");
 		int i = 0;
 		while (true) {
 			long beginquere = System.currentTimeMillis();
-			List<ScmsItem> scmsItemList = scmsItemMapper.selectByIndex(addTimeIndex);
+			List<ScmsItem> scmsItemList = scmsItemMapper.selectByIndex(index);
 			i++;
 			System.out.println("第" + i + "次查询，spent time：" + (System.currentTimeMillis() - beginquere) + "ms!");
 			if (scmsItemList.size() == 0) {
@@ -38,7 +38,7 @@ public class ScmsItemServiceJobImpl extends JobBaseService {
 			for (ScmsItem bean : scmsItemList) {
 				_process(bean);
 				// move list index
-				addTimeIndex = bean.getCreateTime();
+				index = bean.getId();
 			}
 		}
 		System.out.println("总共耗时，spent time：" + (System.currentTimeMillis() - beginTime) + "ms!");
@@ -62,4 +62,10 @@ public class ScmsItemServiceJobImpl extends JobBaseService {
 		record.setCreateTime(new Date().getTime() / 1000L);
 		baseScmsitemMapper.insert(record);
 	}
+
+	public String _getIndex_from_db(String key) {
+
+		return "";
+	}
+
 }

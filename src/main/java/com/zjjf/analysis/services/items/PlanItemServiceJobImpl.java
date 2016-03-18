@@ -25,11 +25,11 @@ public class PlanItemServiceJobImpl extends JobBaseService {
 	public void excuse() {
 
 		long beginTime = System.currentTimeMillis();
-		Integer addTimeIndex = getIndex_from_db("");
+		String index = this._getIndex_from_db("");
 		int i = 0;
 		while (true) {
 			long beginquere = System.currentTimeMillis();
-			List<PlantItem> list = plantItemMapper.selectByIndex(addTimeIndex);
+			List<PlantItem> list = plantItemMapper.selectByIndex(index);
 			i++;
 			System.out.println("第" + i + "次查询，spent time：" + (System.currentTimeMillis() - beginquere) + "ms!");
 			if (list.size() == 0) {
@@ -37,8 +37,7 @@ public class PlanItemServiceJobImpl extends JobBaseService {
 			}
 			for (PlantItem bean : list) {
 				_process(bean);
-				// move list index
-				addTimeIndex = bean.getCreateTime();
+				index = bean.getId();
 			}
 		}
 		System.out.println("总共耗时，spent time：" + (System.currentTimeMillis() - beginTime) + "ms!");
@@ -62,4 +61,10 @@ public class PlanItemServiceJobImpl extends JobBaseService {
 		record.setCreateTime(new Date().getTime() / 1000L);
 		basePlantitemMapper.insert(record);
 	}
+	
+	private String _getIndex_from_db(String key) {
+		
+		return "0";
+	}
+
 }

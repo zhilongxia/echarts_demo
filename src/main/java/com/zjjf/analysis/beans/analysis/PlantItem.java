@@ -57,8 +57,6 @@ public class PlantItem {
     private Integer lower;
 
     private BigDecimal scInPrice;
-    
-    private Integer createTime;
 
     public String getId() {
         return id;
@@ -275,13 +273,4 @@ public class PlantItem {
     public void setScInPrice(BigDecimal scInPrice) {
         this.scInPrice = scInPrice;
     }
-
-	public Integer getCreateTime() {
-		return createTime;
-	}
-
-	public void setCreateTime(Integer createTime) {
-		this.createTime = createTime;
-	}
-    
 }

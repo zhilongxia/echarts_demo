@@ -43,8 +43,6 @@ public class ScmsItem {
     private Byte status;
 
     private Boolean isDelete;
-    
-    private Integer createTime;
 
     public String getId() {
         return id;
@@ -205,13 +203,4 @@ public class ScmsItem {
     public void setIsDelete(Boolean isDelete) {
         this.isDelete = isDelete;
     }
-
-	public Integer getCreateTime() {
-		return createTime;
-	}
-
-	public void setCreateTime(Integer createTime) {
-		this.createTime = createTime;
-	}
-    
 }

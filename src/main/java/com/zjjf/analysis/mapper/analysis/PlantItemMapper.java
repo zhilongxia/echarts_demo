@@ -6,5 +6,5 @@ import com.zjjf.analysis.beans.analysis.PlantItem;
 
 public interface PlantItemMapper {
 
-	List<PlantItem> selectByIndex(Integer idIndex);
+	List<PlantItem> selectByIndex(String idIndex);
 }

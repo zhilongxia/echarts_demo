@@ -29,7 +29,6 @@
     <result column="upper" property="upper" jdbcType="INTEGER" />
     <result column="lower" property="lower" jdbcType="INTEGER" />
     <result column="scInPrice" property="scInPrice" jdbcType="DECIMAL" />
-    <result column="createTime" property="createTime" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, itemBaseId, areaId, areaName, areaPrice, plantDisPrice, plantMemPrice, ordId, 
@@ -38,8 +37,6 @@
   </sql>
   
   <select id="selectByIndex" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select <include refid="Base_Column_List" />, UNIX_TIMESTAMP(addTime) as "createTime" from `PlantItem` 
-    where UNIX_TIMESTAMP(addTime) &gt; #{addTime}
-    order by addTime limit 500
+    select <include refid="Base_Column_List" /> from `PlantItem` where id &gt; #{id} order by id limit 1000
   </select>
 </mapper>

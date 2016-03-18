@@ -6,5 +6,5 @@ import com.zjjf.analysis.beans.analysis.ScmsItem;
 
 public interface ScmsItemMapper {
 	
-	List<ScmsItem> selectByIndex(Integer idIndex);
+	List<ScmsItem> selectByIndex(String idIndex);
 }

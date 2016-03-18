@@ -25,11 +25,11 @@ public class ItemServiceJobImpl extends JobBaseService {
 	public void excuse_item() {
 
 		long beginTime = System.currentTimeMillis();
-		Integer addTimeIndex = getIndex_from_db("itemBase");
+		Integer index = _getIndex_from_db("itemBase");
 		int i = 0;
 		while (true) {
 			long beginquere = System.currentTimeMillis();
-			List<ItemBase> itemBaseList = itembaseMapper.selectByIndex(addTimeIndex);
+			List<ItemBase> itemBaseList = itembaseMapper.selectByIndex(index);
 			i++;
 			System.out.println("第" + i + "次查询，spent time：" + (System.currentTimeMillis() - beginquere) + "ms!");
 			if (itemBaseList.size() == 0) {
@@ -38,7 +38,7 @@ public class ItemServiceJobImpl extends JobBaseService {
 			for (ItemBase itemBase : itemBaseList) {
 				itemBaes_process(itemBase);
 				// move list index
-				addTimeIndex = itemBase.getId();
+				index = itemBase.getId();
 			}
 		}
 		System.out.println("总共耗时，spent time：" + (System.currentTimeMillis() - beginTime) + "ms!");
@@ -62,5 +62,10 @@ public class ItemServiceJobImpl extends JobBaseService {
 		recode.setOrg_pk_id(itemBase.getId());
 		recode.setCreateTime(new Date().getTime() / 1000L);
 		baseItembaseMapper.insert(recode);
+	}
+
+	public Integer _getIndex_from_db(String key) {
+
+		return 0;
 	}
 }
