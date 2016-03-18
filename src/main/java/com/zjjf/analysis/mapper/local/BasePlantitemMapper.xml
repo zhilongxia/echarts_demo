@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zjjf.analysis.mapper.local.BasePlantitemMapper" >
+  <resultMap id="BaseResultMap" type="com.zjjf.analysis.beans.local.BasePlantitem" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="org_pk_id" property="org_pk_id" jdbcType="VARCHAR" />
+    <result column="itemBaseId" property="itemBaseId" jdbcType="INTEGER" />
+    <result column="areaId" property="areaId" jdbcType="INTEGER" />
+    <result column="areaName" property="areaName" jdbcType="VARCHAR" />
+    <result column="areaPrice" property="areaPrice" jdbcType="DECIMAL" />
+    <result column="plantDisPrice" property="plantDisPrice" jdbcType="DECIMAL" />
+    <result column="plantMemPrice" property="plantMemPrice" jdbcType="DECIMAL" />
+    <result column="ordId" property="ordId" jdbcType="INTEGER" />
+    <result column="addTime" property="addTime" jdbcType="TIMESTAMP" />
+    <result column="updateTime" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="tuijian" property="tuijian" jdbcType="BIT" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="isDelete" property="isDelete" jdbcType="BIT" />
+    <result column="maoli" property="maoli" jdbcType="DECIMAL" />
+    <result column="fee" property="fee" jdbcType="DECIMAL" />
+    <result column="spGroupId" property="spGroupId" jdbcType="INTEGER" />
+    <result column="spId" property="spId" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="youHui" property="youHui" jdbcType="VARCHAR" />
+    <result column="restrict" property="restrict" jdbcType="INTEGER" />
+    <result column="goodsStock" property="goodsStock" jdbcType="INTEGER" />
+    <result column="middleStock" property="middleStock" jdbcType="INTEGER" />
+    <result column="sales" property="sales" jdbcType="INTEGER" />
+    <result column="clickRate" property="clickRate" jdbcType="INTEGER" />
+    <result column="upper" property="upper" jdbcType="INTEGER" />
+    <result column="lower" property="lower" jdbcType="INTEGER" />
+    <result column="scInPrice" property="scInPrice" jdbcType="DECIMAL" />
+    <result column="createTime" property="createTime" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, org_pk_id, itemBaseId, areaId, areaName, areaPrice, plantDisPrice, plantMemPrice, 
+    ordId, addTime, updateTime, tuijian, status, isDelete, maoli, fee, spGroupId, spId, 
+    remark, youHui, `restrict`, goodsStock, middleStock, sales, clickRate, upper, lower, 
+    scInPrice, createTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from base_plantitem
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from base_plantitem
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zjjf.analysis.beans.local.BasePlantitem" >
+    insert into base_plantitem (id, org_pk_id, itemBaseId, 
+      areaId, areaName, areaPrice, 
+      plantDisPrice, plantMemPrice, ordId, 
+      addTime, updateTime, tuijian, 
+      status, isDelete, maoli, 
+      fee, spGroupId, spId, 
+      remark, youHui, `restrict`, 
+      goodsStock, middleStock, sales, 
+      clickRate, upper, lower, 
+      scInPrice, createTime)
+    values (#{id,jdbcType=INTEGER}, #{org_pk_id,jdbcType=VARCHAR}, #{itemBaseId,jdbcType=INTEGER}, 
+      #{areaId,jdbcType=INTEGER}, #{areaName,jdbcType=VARCHAR}, #{areaPrice,jdbcType=DECIMAL}, 
+      #{plantDisPrice,jdbcType=DECIMAL}, #{plantMemPrice,jdbcType=DECIMAL}, #{ordId,jdbcType=INTEGER}, 
+      #{addTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{tuijian,jdbcType=BIT}, 
+      #{status,jdbcType=TINYINT}, #{isDelete,jdbcType=BIT}, #{maoli,jdbcType=DECIMAL}, 
+      #{fee,jdbcType=DECIMAL}, #{spGroupId,jdbcType=INTEGER}, #{spId,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{youHui,jdbcType=VARCHAR}, #{restrict,jdbcType=INTEGER}, 
+      #{goodsStock,jdbcType=INTEGER}, #{middleStock,jdbcType=INTEGER}, #{sales,jdbcType=INTEGER}, 
+      #{clickRate,jdbcType=INTEGER}, #{upper,jdbcType=INTEGER}, #{lower,jdbcType=INTEGER}, 
+      #{scInPrice,jdbcType=DECIMAL}, #{createTime,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zjjf.analysis.beans.local.BasePlantitem" >
+    insert into base_plantitem
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="org_pk_id != null" >
+        org_pk_id,
+      </if>
+      <if test="itemBaseId != null" >
+        itemBaseId,
+      </if>
+      <if test="areaId != null" >
+        areaId,
+      </if>
+      <if test="areaName != null" >
+        areaName,
+      </if>
+      <if test="areaPrice != null" >
+        areaPrice,
+      </if>
+      <if test="plantDisPrice != null" >
+        plantDisPrice,
+      </if>
+      <if test="plantMemPrice != null" >
+        plantMemPrice,
+      </if>
+      <if test="ordId != null" >
+        ordId,
+      </if>
+      <if test="addTime != null" >
+        addTime,
+      </if>
+      <if test="updateTime != null" >
+        updateTime,
+      </if>
+      <if test="tuijian != null" >
+        tuijian,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="isDelete != null" >
+        isDelete,
+      </if>
+      <if test="maoli != null" >
+        maoli,
+      </if>
+      <if test="fee != null" >
+        fee,
+      </if>
+      <if test="spGroupId != null" >
+        spGroupId,
+      </if>
+      <if test="spId != null" >
+        spId,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="youHui != null" >
+        youHui,
+      </if>
+      <if test="restrict != null" >
+        `restrict`,
+      </if>
+      <if test="goodsStock != null" >
+        goodsStock,
+      </if>
+      <if test="middleStock != null" >
+        middleStock,
+      </if>
+      <if test="sales != null" >
+        sales,
+      </if>
+      <if test="clickRate != null" >
+        clickRate,
+      </if>
+      <if test="upper != null" >
+        upper,
+      </if>
+      <if test="lower != null" >
+        lower,
+      </if>
+      <if test="scInPrice != null" >
+        scInPrice,
+      </if>
+      <if test="createTime != null" >
+        createTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="org_pk_id != null" >
+        #{org_pk_id,jdbcType=VARCHAR},
+      </if>
+      <if test="itemBaseId != null" >
+        #{itemBaseId,jdbcType=INTEGER},
+      </if>
+      <if test="areaId != null" >
+        #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="areaName != null" >
+        #{areaName,jdbcType=VARCHAR},
+      </if>
+      <if test="areaPrice != null" >
+        #{areaPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="plantDisPrice != null" >
+        #{plantDisPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="plantMemPrice != null" >
+        #{plantMemPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="ordId != null" >
+        #{ordId,jdbcType=INTEGER},
+      </if>
+      <if test="addTime != null" >
+        #{addTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tuijian != null" >
+        #{tuijian,jdbcType=BIT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=BIT},
+      </if>
+      <if test="maoli != null" >
+        #{maoli,jdbcType=DECIMAL},
+      </if>
+      <if test="fee != null" >
+        #{fee,jdbcType=DECIMAL},
+      </if>
+      <if test="spGroupId != null" >
+        #{spGroupId,jdbcType=INTEGER},
+      </if>
+      <if test="spId != null" >
+        #{spId,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="youHui != null" >
+        #{youHui,jdbcType=VARCHAR},
+      </if>
+      <if test="restrict != null" >
+        #{restrict,jdbcType=INTEGER},
+      </if>
+      <if test="goodsStock != null" >
+        #{goodsStock,jdbcType=INTEGER},
+      </if>
+      <if test="middleStock != null" >
+        #{middleStock,jdbcType=INTEGER},
+      </if>
+      <if test="sales != null" >
+        #{sales,jdbcType=INTEGER},
+      </if>
+      <if test="clickRate != null" >
+        #{clickRate,jdbcType=INTEGER},
+      </if>
+      <if test="upper != null" >
+        #{upper,jdbcType=INTEGER},
+      </if>
+      <if test="lower != null" >
+        #{lower,jdbcType=INTEGER},
+      </if>
+      <if test="scInPrice != null" >
+        #{scInPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zjjf.analysis.beans.local.BasePlantitem" >
+    update base_plantitem
+    <set >
+      <if test="org_pk_id != null" >
+        org_pk_id = #{org_pk_id,jdbcType=VARCHAR},
+      </if>
+      <if test="itemBaseId != null" >
+        itemBaseId = #{itemBaseId,jdbcType=INTEGER},
+      </if>
+      <if test="areaId != null" >
+        areaId = #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="areaName != null" >
+        areaName = #{areaName,jdbcType=VARCHAR},
+      </if>
+      <if test="areaPrice != null" >
+        areaPrice = #{areaPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="plantDisPrice != null" >
+        plantDisPrice = #{plantDisPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="plantMemPrice != null" >
+        plantMemPrice = #{plantMemPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="ordId != null" >
+        ordId = #{ordId,jdbcType=INTEGER},
+      </if>
+      <if test="addTime != null" >
+        addTime = #{addTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tuijian != null" >
+        tuijian = #{tuijian,jdbcType=BIT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="isDelete != null" >
+        isDelete = #{isDelete,jdbcType=BIT},
+      </if>
+      <if test="maoli != null" >
+        maoli = #{maoli,jdbcType=DECIMAL},
+      </if>
+      <if test="fee != null" >
+        fee = #{fee,jdbcType=DECIMAL},
+      </if>
+      <if test="spGroupId != null" >
+        spGroupId = #{spGroupId,jdbcType=INTEGER},
+      </if>
+      <if test="spId != null" >
+        spId = #{spId,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="youHui != null" >
+        youHui = #{youHui,jdbcType=VARCHAR},
+      </if>
+      <if test="restrict != null" >
+        `restrict` = #{restrict,jdbcType=INTEGER},
+      </if>
+      <if test="goodsStock != null" >
+        goodsStock = #{goodsStock,jdbcType=INTEGER},
+      </if>
+      <if test="middleStock != null" >
+        middleStock = #{middleStock,jdbcType=INTEGER},
+      </if>
+      <if test="sales != null" >
+        sales = #{sales,jdbcType=INTEGER},
+      </if>
+      <if test="clickRate != null" >
+        clickRate = #{clickRate,jdbcType=INTEGER},
+      </if>
+      <if test="upper != null" >
+        upper = #{upper,jdbcType=INTEGER},
+      </if>
+      <if test="lower != null" >
+        lower = #{lower,jdbcType=INTEGER},
+      </if>
+      <if test="scInPrice != null" >
+        scInPrice = #{scInPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null" >
+        createTime = #{createTime,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zjjf.analysis.beans.local.BasePlantitem" >
+    update base_plantitem
+    set org_pk_id = #{org_pk_id,jdbcType=VARCHAR},
+      itemBaseId = #{itemBaseId,jdbcType=INTEGER},
+      areaId = #{areaId,jdbcType=INTEGER},
+      areaName = #{areaName,jdbcType=VARCHAR},
+      areaPrice = #{areaPrice,jdbcType=DECIMAL},
+      plantDisPrice = #{plantDisPrice,jdbcType=DECIMAL},
+      plantMemPrice = #{plantMemPrice,jdbcType=DECIMAL},
+      ordId = #{ordId,jdbcType=INTEGER},
+      addTime = #{addTime,jdbcType=TIMESTAMP},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      tuijian = #{tuijian,jdbcType=BIT},
+      status = #{status,jdbcType=TINYINT},
+      isDelete = #{isDelete,jdbcType=BIT},
+      maoli = #{maoli,jdbcType=DECIMAL},
+      fee = #{fee,jdbcType=DECIMAL},
+      spGroupId = #{spGroupId,jdbcType=INTEGER},
+      spId = #{spId,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      youHui = #{youHui,jdbcType=VARCHAR},
+      `restrict` = #{restrict,jdbcType=INTEGER},
+      goodsStock = #{goodsStock,jdbcType=INTEGER},
+      middleStock = #{middleStock,jdbcType=INTEGER},
+      sales = #{sales,jdbcType=INTEGER},
+      clickRate = #{clickRate,jdbcType=INTEGER},
+      upper = #{upper,jdbcType=INTEGER},
+      lower = #{lower,jdbcType=INTEGER},
+      scInPrice = #{scInPrice,jdbcType=DECIMAL},
+      createTime = #{createTime,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

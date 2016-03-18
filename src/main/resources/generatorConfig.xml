@@ -10,7 +10,7 @@
 			<property name="prjname" value="echarts_demo" />
 		</commentGenerator>
 
-	    <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/analysis_db" userId="root" password="123456" />
+	    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/analysis_db" userId="root" password="123456" />
 
 		<javaModelGenerator targetPackage="com.zjjf.analysis.beans.local"
 			targetProject="echarts_demo">
@@ -25,10 +25,10 @@
 
 		<javaClientGenerator type="XMLMAPPER" targetPackage="com.zjjf.analysis.mapper.local" targetProject="echarts_demo">
 			<property name="enableSubPackages" value="true" />
-		</javaClientGenerator> -->
+		</javaClientGenerator>
 		
 		
-  		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.11:3316/dataImport" userId="gg" password="gg2802" />
+<!--   		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.11:3316/dataImport" userId="gg" password="gg2802" />
 		
 		<javaModelGenerator targetPackage="com.zjjf.analysis.beans.analysis"
 			targetProject="echarts_demo">
@@ -43,9 +43,9 @@
 
 		<javaClientGenerator type="XMLMAPPER" targetPackage="com.zjjf.analysis.mapper.analysis" targetProject="echarts_demo">
 			<property name="enableSubPackages" value="true" />
-		</javaClientGenerator>
+		</javaClientGenerator> -->
 
-		<table tableName="ScmsItem" domainObjectName="ScmsItem"
+		<table tableName="base_plantitem" domainObjectName="BasePlantitem"
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false">
