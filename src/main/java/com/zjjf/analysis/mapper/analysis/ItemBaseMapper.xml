@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zjjf.analysis.mapper.analysis.ItemBaseMapper" >
+  <resultMap id="BaseResultMap" type="com.zjjf.analysis.beans.analysis.ItemBase" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="cateId" property="cateId" jdbcType="INTEGER" />
+    <result column="mdseId" property="mdseId" jdbcType="VARCHAR" />
+    <result column="ordId" property="ordId" jdbcType="TINYINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="brand" property="brand" jdbcType="VARCHAR" />
+    <result column="spec" property="spec" jdbcType="VARCHAR" />
+    <result column="imgS" property="imgS" jdbcType="VARCHAR" />
+    <result column="imgB" property="imgB" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="sales" property="sales" jdbcType="INTEGER" />
+    <result column="news" property="news" jdbcType="BIT" />
+    <result column="tuiJian" property="tuiJian" jdbcType="BIT" />
+    <result column="addTime" property="addTime" jdbcType="TIMESTAMP" />
+    <result column="updateTime" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="isDelete" property="isDelete" jdbcType="BIT" />
+    <result column="col1" property="col1" jdbcType="VARCHAR" />
+    <result column="col2" property="col2" jdbcType="VARCHAR" />
+    <result column="col3" property="col3" jdbcType="VARCHAR" />
+    <result column="col4" property="col4" jdbcType="VARCHAR" />
+    <result column="col5" property="col5" jdbcType="VARCHAR" />
+    <result column="col6" property="col6" jdbcType="VARCHAR" />
+    <result column="col7" property="col7" jdbcType="VARCHAR" />
+    <result column="col8" property="col8" jdbcType="VARCHAR" />
+    <result column="col9" property="col9" jdbcType="VARCHAR" />
+    <result column="col10" property="col10" jdbcType="VARCHAR" />
+    <result column="pfPrice" property="pfPrice" jdbcType="DECIMAL" />
+    <result column="useType" property="useType" jdbcType="TINYINT" />
+    <result column="taste" property="taste" jdbcType="VARCHAR" />
+    <result column="measure" property="measure" jdbcType="VARCHAR" />
+    <result column="shortNm" property="shortNm" jdbcType="VARCHAR" />
+    <result column="pkg" property="pkg" jdbcType="VARCHAR" />
+    <result column="pkgNum" property="pkgNum" jdbcType="INTEGER" />
+    <result column="upId" property="upId" jdbcType="INTEGER" />
+    <result column="brandId" property="brandId" jdbcType="INTEGER" />
+    <result column="tgId" property="tgId" jdbcType="VARCHAR" />
+    <result column="color" property="color" jdbcType="VARCHAR" />
+    <result column="quanNm" property="quanNm" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    id, cateId, mdseId, ordId, name, brand, spec, imgS, imgB, price, sales, news, tuiJian, 
+    addTime, updateTime, status, isDelete, col1, col2, col3, col4, col5, col6, col7, 
+    col8, col9, col10, pfPrice, useType, taste, measure, shortNm, pkg, pkgNum, upId, 
+    brandId, tgId, color, quanNm
+  </sql>
+  
+  <select id="selectByIndex" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select <include refid="Base_Column_List" /> from `ItemBase` where id &gt; #{id} order by id limit 500
+  </select>
+  
+</mapper>

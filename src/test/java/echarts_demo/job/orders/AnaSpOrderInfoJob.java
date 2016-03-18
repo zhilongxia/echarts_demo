@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.zjjf.analysis.services.SpOrderInfoServiceJobImpl;
+import com.zjjf.analysis.services.orders.SpOrderInfoServiceJobImpl;
 
 public class AnaSpOrderInfoJob {
 
