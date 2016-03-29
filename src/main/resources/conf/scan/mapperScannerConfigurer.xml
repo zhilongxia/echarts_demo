@@ -4,12 +4,17 @@
               xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
     <bean id="bbu_Config" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.zjjf.analysis.mapper.analysis"/>
+        <property name="basePackage" value="com.zjjf.analysis.dao.analysis, com.zjjf.analysis.mapper.analysis"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory_bbu"></property>
     </bean>
     
     <bean id="analysis_Config" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.zjjf.analysis.mapper.local"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory_analysis"></property>
+    </bean>
+    
+    <bean id="datasource_Config" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.zjjf.analysis.dao.datasource"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory_datasource"></property>
     </bean>
 </beans>

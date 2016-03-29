@@ -1,4 +1,4 @@
-package com.zjjf.analysis.services;
+package com.zjjf.analysis.services.tasks;
 
 import java.util.Date;
 import java.util.List;

@@ -11,7 +11,7 @@ import com.zjjf.analysis.beans.analysis.ScmsItem;
 import com.zjjf.analysis.beans.local.BaseScmsitem;
 import com.zjjf.analysis.mapper.analysis.ScmsItemMapper;
 import com.zjjf.analysis.mapper.local.BaseScmsitemMapper;
-import com.zjjf.analysis.services.JobBaseService;
+import com.zjjf.analysis.services.tasks.JobBaseService;
 
 @Service
 public class ScmsItemServiceJobImpl extends JobBaseService {

@@ -1,4 +1,4 @@
-package com.zjjf.analysis.controller;
+package com.zjjf.analysis.controller.globals;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +19,7 @@ public class IndexController {
 
 	@Autowired
 	private GraphEchartsOptionServiceImpl graphOptionService;
-	
+
 	@Autowired
 	PieEchartsOptionServiceImpl pieOptionService;
 
@@ -34,13 +34,13 @@ public class IndexController {
 
 		return "echarts/graph_char_data";
 	}
-	
+
 	@RequestMapping(value = "/graphdeep")
 	public String graphdeep() {
 
 		return "echarts/graph_char_deep";
 	}
-	
+
 	@RequestMapping(value = "/getGraphJson", produces = "application/json; charset=utf-8")
 	public @ResponseBody String getGraph_demo() throws JsonProcessingException {
 
@@ -56,13 +56,13 @@ public class IndexController {
 		mapper.setSerializationInclusion(Include.NON_NULL);
 		return mapper.writeValueAsString(option);
 	}
-	
+
 	@RequestMapping(value = "/pie_chart")
 	public String pie_chart() {
 
 		return "echarts/pie_chart";
 	}
-	
+
 	@RequestMapping(value = "/pie_chart_deep")
 	public String pie_chart_deep() {
 

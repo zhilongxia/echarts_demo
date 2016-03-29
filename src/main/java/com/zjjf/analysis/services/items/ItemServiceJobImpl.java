@@ -11,7 +11,7 @@ import com.zjjf.analysis.beans.analysis.ItemBase;
 import com.zjjf.analysis.beans.local.BaseItembase;
 import com.zjjf.analysis.mapper.analysis.ItemBaseMapper;
 import com.zjjf.analysis.mapper.local.BaseItembaseMapper;
-import com.zjjf.analysis.services.JobBaseService;
+import com.zjjf.analysis.services.tasks.JobBaseService;
 
 @Service
 public class ItemServiceJobImpl extends JobBaseService {

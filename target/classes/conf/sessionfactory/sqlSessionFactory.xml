@@ -10,5 +10,10 @@
     <bean id="sqlSessionFactory_analysis" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource_analysis"/>
     </bean>
+    
+    <bean id="sqlSessionFactory_datasource" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource_datasource"/>
+    </bean>
+    
         
 </beans>

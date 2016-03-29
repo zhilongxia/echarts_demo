@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zjjf.analysis.dao.datasource.ScManagerMapper" >
+  <resultMap id="BaseResultMap" type="com.zjjf.analysis.beans.login.ScManager" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="supplierName" property="supplierName" jdbcType="VARCHAR" />
+    <result column="supplierCode" property="supplierCode" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="token" property="token" jdbcType="VARCHAR" />
+    <result column="salt" property="salt" jdbcType="VARCHAR" />
+    <result column="lastTime" property="lastTime" jdbcType="TIMESTAMP" />
+    <result column="loginIP" property="loginIP" jdbcType="VARCHAR" />
+    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    <result column="callNum" property="callNum" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="INTEGER" />
+    <result column="city" property="city" jdbcType="INTEGER" />
+    <result column="areaId" property="areaId" jdbcType="INTEGER" />
+    <result column="bsCircleId" property="bsCircleId" jdbcType="INTEGER" />
+    <result column="supplierAddress" property="supplierAddress" jdbcType="VARCHAR" />
+    <result column="supplierMark" property="supplierMark" jdbcType="VARCHAR" />
+    <result column="managerName" property="managerName" jdbcType="VARCHAR" />
+    <result column="managerTel" property="managerTel" jdbcType="VARCHAR" />
+    <result column="regTime" property="regTime" jdbcType="TIMESTAMP" />
+    <result column="updateTime" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="updateMark" property="updateMark" jdbcType="VARCHAR" />
+    <result column="bankCardurl" property="bankCardurl" jdbcType="VARCHAR" />
+    <result column="bankNum" property="bankNum" jdbcType="VARCHAR" />
+    <result column="bankName" property="bankName" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="isDelete" property="isDelete" jdbcType="BIT" />
+    <result column="col1" property="col1" jdbcType="VARCHAR" />
+    <result column="col2" property="col2" jdbcType="VARCHAR" />
+    <result column="col3" property="col3" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, supplierName, supplierCode, password, token, salt, lastTime, loginIP, mobile, 
+    callNum, email, province, city, areaId, bsCircleId, supplierAddress, supplierMark, 
+    managerName, managerTel, regTime, updateTime, updateMark, bankCardurl, bankNum, bankName, 
+    status, isDelete, col1, col2, col3
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from ScManager
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from ScManager
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.zjjf.analysis.beans.login.ScManager" >
+    insert into ScManager (id, supplierName, supplierCode, 
+      password, token, salt, 
+      lastTime, loginIP, mobile, 
+      callNum, email, province, 
+      city, areaId, bsCircleId, 
+      supplierAddress, supplierMark, managerName, 
+      managerTel, regTime, updateTime, 
+      updateMark, bankCardurl, bankNum, 
+      bankName, status, isDelete, 
+      col1, col2, col3)
+    values (#{id,jdbcType=VARCHAR}, #{supplierName,jdbcType=VARCHAR}, #{supplierCode,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{token,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}, 
+      #{lastTime,jdbcType=TIMESTAMP}, #{loginIP,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{callNum,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{province,jdbcType=INTEGER}, 
+      #{city,jdbcType=INTEGER}, #{areaId,jdbcType=INTEGER}, #{bsCircleId,jdbcType=INTEGER}, 
+      #{supplierAddress,jdbcType=VARCHAR}, #{supplierMark,jdbcType=VARCHAR}, #{managerName,jdbcType=VARCHAR}, 
+      #{managerTel,jdbcType=VARCHAR}, #{regTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{updateMark,jdbcType=VARCHAR}, #{bankCardurl,jdbcType=VARCHAR}, #{bankNum,jdbcType=VARCHAR}, 
+      #{bankName,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{isDelete,jdbcType=BIT}, 
+      #{col1,jdbcType=VARCHAR}, #{col2,jdbcType=VARCHAR}, #{col3,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zjjf.analysis.beans.login.ScManager" >
+    insert into ScManager
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="supplierName != null" >
+        supplierName,
+      </if>
+      <if test="supplierCode != null" >
+        supplierCode,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="token != null" >
+        token,
+      </if>
+      <if test="salt != null" >
+        salt,
+      </if>
+      <if test="lastTime != null" >
+        lastTime,
+      </if>
+      <if test="loginIP != null" >
+        loginIP,
+      </if>
+      <if test="mobile != null" >
+        mobile,
+      </if>
+      <if test="callNum != null" >
+        callNum,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="province != null" >
+        province,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="areaId != null" >
+        areaId,
+      </if>
+      <if test="bsCircleId != null" >
+        bsCircleId,
+      </if>
+      <if test="supplierAddress != null" >
+        supplierAddress,
+      </if>
+      <if test="supplierMark != null" >
+        supplierMark,
+      </if>
+      <if test="managerName != null" >
+        managerName,
+      </if>
+      <if test="managerTel != null" >
+        managerTel,
+      </if>
+      <if test="regTime != null" >
+        regTime,
+      </if>
+      <if test="updateTime != null" >
+        updateTime,
+      </if>
+      <if test="updateMark != null" >
+        updateMark,
+      </if>
+      <if test="bankCardurl != null" >
+        bankCardurl,
+      </if>
+      <if test="bankNum != null" >
+        bankNum,
+      </if>
+      <if test="bankName != null" >
+        bankName,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="isDelete != null" >
+        isDelete,
+      </if>
+      <if test="col1 != null" >
+        col1,
+      </if>
+      <if test="col2 != null" >
+        col2,
+      </if>
+      <if test="col3 != null" >
+        col3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierName != null" >
+        #{supplierName,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierCode != null" >
+        #{supplierCode,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="token != null" >
+        #{token,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null" >
+        #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="lastTime != null" >
+        #{lastTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loginIP != null" >
+        #{loginIP,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="callNum != null" >
+        #{callNum,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=INTEGER},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=INTEGER},
+      </if>
+      <if test="areaId != null" >
+        #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="bsCircleId != null" >
+        #{bsCircleId,jdbcType=INTEGER},
+      </if>
+      <if test="supplierAddress != null" >
+        #{supplierAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierMark != null" >
+        #{supplierMark,jdbcType=VARCHAR},
+      </if>
+      <if test="managerName != null" >
+        #{managerName,jdbcType=VARCHAR},
+      </if>
+      <if test="managerTel != null" >
+        #{managerTel,jdbcType=VARCHAR},
+      </if>
+      <if test="regTime != null" >
+        #{regTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateMark != null" >
+        #{updateMark,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCardurl != null" >
+        #{bankCardurl,jdbcType=VARCHAR},
+      </if>
+      <if test="bankNum != null" >
+        #{bankNum,jdbcType=VARCHAR},
+      </if>
+      <if test="bankName != null" >
+        #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=BIT},
+      </if>
+      <if test="col1 != null" >
+        #{col1,jdbcType=VARCHAR},
+      </if>
+      <if test="col2 != null" >
+        #{col2,jdbcType=VARCHAR},
+      </if>
+      <if test="col3 != null" >
+        #{col3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zjjf.analysis.beans.login.ScManager" >
+    update ScManager
+    <set >
+      <if test="supplierName != null" >
+        supplierName = #{supplierName,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierCode != null" >
+        supplierCode = #{supplierCode,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="token != null" >
+        token = #{token,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null" >
+        salt = #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="lastTime != null" >
+        lastTime = #{lastTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loginIP != null" >
+        loginIP = #{loginIP,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null" >
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="callNum != null" >
+        callNum = #{callNum,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=INTEGER},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=INTEGER},
+      </if>
+      <if test="areaId != null" >
+        areaId = #{areaId,jdbcType=INTEGER},
+      </if>
+      <if test="bsCircleId != null" >
+        bsCircleId = #{bsCircleId,jdbcType=INTEGER},
+      </if>
+      <if test="supplierAddress != null" >
+        supplierAddress = #{supplierAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="supplierMark != null" >
+        supplierMark = #{supplierMark,jdbcType=VARCHAR},
+      </if>
+      <if test="managerName != null" >
+        managerName = #{managerName,jdbcType=VARCHAR},
+      </if>
+      <if test="managerTel != null" >
+        managerTel = #{managerTel,jdbcType=VARCHAR},
+      </if>
+      <if test="regTime != null" >
+        regTime = #{regTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateMark != null" >
+        updateMark = #{updateMark,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCardurl != null" >
+        bankCardurl = #{bankCardurl,jdbcType=VARCHAR},
+      </if>
+      <if test="bankNum != null" >
+        bankNum = #{bankNum,jdbcType=VARCHAR},
+      </if>
+      <if test="bankName != null" >
+        bankName = #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="isDelete != null" >
+        isDelete = #{isDelete,jdbcType=BIT},
+      </if>
+      <if test="col1 != null" >
+        col1 = #{col1,jdbcType=VARCHAR},
+      </if>
+      <if test="col2 != null" >
+        col2 = #{col2,jdbcType=VARCHAR},
+      </if>
+      <if test="col3 != null" >
+        col3 = #{col3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zjjf.analysis.beans.login.ScManager" >
+    update ScManager
+    set supplierName = #{supplierName,jdbcType=VARCHAR},
+      supplierCode = #{supplierCode,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      token = #{token,jdbcType=VARCHAR},
+      salt = #{salt,jdbcType=VARCHAR},
+      lastTime = #{lastTime,jdbcType=TIMESTAMP},
+      loginIP = #{loginIP,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      callNum = #{callNum,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      province = #{province,jdbcType=INTEGER},
+      city = #{city,jdbcType=INTEGER},
+      areaId = #{areaId,jdbcType=INTEGER},
+      bsCircleId = #{bsCircleId,jdbcType=INTEGER},
+      supplierAddress = #{supplierAddress,jdbcType=VARCHAR},
+      supplierMark = #{supplierMark,jdbcType=VARCHAR},
+      managerName = #{managerName,jdbcType=VARCHAR},
+      managerTel = #{managerTel,jdbcType=VARCHAR},
+      regTime = #{regTime,jdbcType=TIMESTAMP},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      updateMark = #{updateMark,jdbcType=VARCHAR},
+      bankCardurl = #{bankCardurl,jdbcType=VARCHAR},
+      bankNum = #{bankNum,jdbcType=VARCHAR},
+      bankName = #{bankName,jdbcType=VARCHAR},
+      status = #{status,jdbcType=TINYINT},
+      isDelete = #{isDelete,jdbcType=BIT},
+      col1 = #{col1,jdbcType=VARCHAR},
+      col2 = #{col2,jdbcType=VARCHAR},
+      col3 = #{col3,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

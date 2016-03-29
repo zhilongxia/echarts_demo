@@ -1,4 +1,4 @@
-package com.zjjf.analysis.controller;
+package com.zjjf.analysis.controller.globals;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

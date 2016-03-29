@@ -26,12 +26,12 @@
         <li>
             <div class="category"><a href="${root}/scms/sp/toSpWalletIndex.do" target="mainiframe"><i class="icon icon-wallet"></i>我的钱包</a></div>
         </li>
-         
+        --%>
          
         <li>
-            <div class="category"><a href="${root}/analysis/report/toReportPage.do" target="mainiframe"><i class="icon icon-wallet"></i>合作商数据分析</a></div>
+            <div class="category"><a href="${root}/gateway/graph_char.do" target="mainiframe"><i class="icon icon-wallet"></i>全局统计数据分析</a></div>
         </li>
-        --%>
+        
         <li>
             <div class="category"><a href="${root}/analysis/statis/toStatisPage.do" target="mainiframe"><i class="icon icon-wallet"></i>全局统计</a></div>
         </li>

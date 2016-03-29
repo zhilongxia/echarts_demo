@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+http://www.springframework.org/schema/tx 
+http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+http://www.springframework.org/schema/aop 
+http://www.springframework.org/schema/aop/spring-aop-4.0.xsd"
+default-autowire="byName">
+	<!-- ==========================APAHCE SHIRO CONFIG========================== -->
+	<!-- 简单验证密码服务 hashService+PasswordMatcher <bean id="hashService" class="org.apache.shiro.crypto.hash.DefaultHashService"></bean> 
+		<bean id="hashFormat" class="org.apache.shiro.crypto.hash.format.Shiro1CryptFormat"></bean> 
+		<bean id="hashFormatFactory" class="org.apache.shiro.crypto.hash.format.DefaultHashFormatFactory"></bean> 
+		<bean id="passwordService" class="org.apache.shiro.authc.credential.DefaultPasswordService"> 
+		<property name="hashService" ref="hashService"/> <property name="hashFormat" 
+		ref="hashFormat"/> <property name="hashFormatFactory" ref="hashFormatFactory"/> 
+		</bean> <bean id="passwordMatcher" class="org.apache.shiro.authc.credential.PasswordMatcher"> 
+		<property name="passwordService" ref="passwordService"/> </bean> -->
+	<!-- HashedCredentialsMatcher的算法需要和生成密码时的算法一样 HashedCredentialsMatcher according 
+		to com.corner.mobile.core.security.PasswordHelper 2.credentialsMatcher=org.apache.shiro.authc.credential.HashedCredentialsMatcher 
+		3.credentialsMatcher.hashAlgorithmName=md5 4.credentialsMatcher.hashIterations=2 
+		5.credentialsMatcher.storedCredentialsHexEncoded=true //表示是否存储散列后的密码为16进制需要和生成密码时的一样，默认是base64； -->
+		
+	<bean id="passwordMatcher" class="com.zjjf.analysis.services.security.RetryLimitHashedCredentialsMatcher">
+		<property name="hashAlgorithmName" value="md5" />
+	</bean>
+	<bean id="shiroCacheManager" class="com.zjjf.analysis.services.security.ShiroCacheManager">
+		<property name="ehCacheCacheManager" ref="springCacheManager"></property>
+	</bean>
+	<bean id="shiroAuthenticator" class="org.apache.shiro.authc.pam.ModularRealmAuthenticator">
+		<property name="authenticationStrategy">
+			<bean class="org.apache.shiro.authc.pam.FirstSuccessfulStrategy"></bean>
+		</property>
+	</bean>
+	<bean id="supplierRealm" class="com.zjjf.analysis.services.security.UserInfoServiceRealm">
+		<property name="credentialsMatcher" ref="passwordMatcher" />
+	</bean>
+	<!-- <bean id="factoryRealm" class="com.corner.data.analysis.security.FactoryRealm">
+		<property name="credentialsMatcher" ref="passwordMatcher" />
+	</bean> -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="cacheManager" ref="shiroCacheManager" />
+		<property name="authenticator" ref="shiroAuthenticator" />
+		<property name="realms">
+	        <list>  
+	            <ref bean="supplierRealm" /> 
+<!-- 	            <ref bean="factoryRealm" /> -->
+	        </list>  
+    	</property>
+	</bean>
+	<!-- Shiro Filter -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="loginUrl" value="/analysis/authority/scmsLoginPage.do" />
+		<property name="successUrl" value="/analysis/authority/scmsIndexPage.do" />
+		<property name="unauthorizedUrl" value="/analysis/authority/scmsLoginPage.do" />
+		<property name="filterChainDefinitions">
+			<value>
+				/resources/**=anon
+				/analysis/authority/scmsLoginPage.do=anon
+				/analysis/authority/supplierLoginIn.do=anon
+				/analysis/authority/scMgLoginIn.do=anon
+				/analysis/authority/doLoginOut.do=anon
+				/checkcode.do=anon
+				/**=authc
+			</value>
+		</property>
+	</bean>
+	<!-- enable for Shiro's Annotations @RequiresRoles, @RequiresPermissions,etc. -->
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+	
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor" />
+	
+	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager" />
+	</bean>
+</beans>

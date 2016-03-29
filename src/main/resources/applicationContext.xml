@@ -44,6 +44,7 @@
     <import resource="conf/datasource/dataSource.xml"/>
     <import resource="conf/sessionfactory/sqlSessionFactory.xml"/>
     <import resource="conf/scan/mapperScannerConfigurer.xml"/>
+<!--     <import resource="conf/shiro/spring-shiro.xml"/> -->
 </beans>
 
 

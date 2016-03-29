@@ -11,7 +11,7 @@ import com.zjjf.analysis.beans.analysis.PlantItem;
 import com.zjjf.analysis.beans.local.BasePlantitem;
 import com.zjjf.analysis.mapper.analysis.PlantItemMapper;
 import com.zjjf.analysis.mapper.local.BasePlantitemMapper;
-import com.zjjf.analysis.services.JobBaseService;
+import com.zjjf.analysis.services.tasks.JobBaseService;
 
 @Service
 public class PlanItemServiceJobImpl extends JobBaseService {
