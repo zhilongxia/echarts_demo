@@ -176,7 +176,7 @@ public abstract class AbstractExportBigData implements ExportBigData {
 			final int maxRow, final String sql, final Object... sqlParams) {
 		// 每个文件最大行数
 		final int max = getMaxRows(maxRow);
-		jdbcTemplate.query(sql, sqlParams, new ResultSetExtractor() {
+		jdbcTemplate.query(sql, sqlParams, new ResultSetExtractor<Object>() {
 			@Override
 			public Object extractData(ResultSet rs) throws SQLException, DataAccessException {
 				// 文件收集器
@@ -236,6 +236,7 @@ public abstract class AbstractExportBigData implements ExportBigData {
 		});
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void exportToZip(final OutputStream os, int maxRow, String sql, Object... sqlParams) {
 		exportToZip(Collections.EMPTY_LIST, os, maxRow, sql, sqlParams);

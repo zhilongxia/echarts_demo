@@ -32,7 +32,8 @@ public class ShiroCacheManager extends EhCacheManager{
 	
 	private EhCacheCacheManager ehCacheCacheManager;
 
-    private net.sf.ehcache.CacheManager ensureCacheManager() {
+    @SuppressWarnings("unused")
+	private net.sf.ehcache.CacheManager ensureCacheManager() {
         try {
             if (this.manager == null) {
                 if (log.isDebugEnabled()) {

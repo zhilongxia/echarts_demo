@@ -84,23 +84,18 @@ public class BaseController {
 		while (entries.hasNext()) {
 			entry = entries.next();
 			name = entry.getKey();
-			if (!"pageIndex".equals(name)) {
-				Object valueObj = entry.getValue();
-				if (null == valueObj) {
-					value = "";
-				} else if (valueObj instanceof String[]) {
-					String[] values = (String[]) valueObj;
-					for (int i = 0; i < values.length; i++) {
-						value = values[i] + ",";
-					}
-					value = value.substring(0, value.length() - 1);
-				} else {
-					value = valueObj.toString();
+			Object valueObj = entry.getValue();
+			if (valueObj instanceof String[]) {
+				String[] values = (String[]) valueObj;
+				for (int i = 0; i < values.length; i++) {
+					value = values[i] + ",";
 				}
-				returnMap.put(name, value);
+				value = value.substring(0, value.length() - 1);
+			} else {
+				value = valueObj.toString();
 			}
+			returnMap.put(name, value);
 		}
 		return returnMap;
 	}
-
 }
