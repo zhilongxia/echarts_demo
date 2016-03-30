@@ -95,27 +95,27 @@ public class AuthorityController extends BaseController {
 	@RequestMapping(value = "/scMgLoginIn.do")
 	public String gotoLoginPage(HttpServletRequest request) throws IOException {
 
-		return LoginConstant.login_url;
+		return LoginConstant.main_url;
 	}
 
 	@RequestMapping(value = "/scmsMainPage.do")
 	public String index(HttpServletRequest request, Model model) {
 
-		Subject subject = SecurityUtils.getSubject();
-		if(subject.isAuthenticated()){
-			LoginVo logInVo = new LoginVo();
-			UserInfos user =(UserInfos)subject.getSession().getAttribute(SessionConfig.user_session_userInfo);
-			if(user == null){
-				return LoginConstant.login_url;
-			}else{
-				logInVo.setUserId(user.getId());
-				logInVo.setUserName(user.getUserName());
-			}
-			model.addAttribute("logInVo", logInVo);
-			return LoginConstant.main_url;
-		}else{
+//		Subject subject = SecurityUtils.getSubject();
+//		if(subject.isAuthenticated()){
+//			LoginVo logInVo = new LoginVo();
+//			UserInfos user =(UserInfos)subject.getSession().getAttribute(SessionConfig.user_session_userInfo);
+//			if(user == null){
+//				return LoginConstant.login_url;
+//			}else{
+//				logInVo.setUserId(user.getId());
+//				logInVo.setUserName(user.getUserName());
+//			}
+//			model.addAttribute("logInVo", logInVo);
+//			return LoginConstant.main_url;
+//		}else{
 			return LoginConstant.login_url;
-		}
+//		}
 	}
 
 	@RequestMapping(value = "/toMainPage.do", method = RequestMethod.GET)

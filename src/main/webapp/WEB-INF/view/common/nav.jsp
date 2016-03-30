@@ -31,7 +31,9 @@
         <li>
             <div class="category"><a href="${root}/gateway/graph_char.do" target="mainiframe"><i class="icon icon-wallet"></i>全局统计数据分析</a></div>
         </li>
-        
+        <li>
+            <div class="category"><a href="${root}/api/sp_order/loadPage.do" target="mainiframe"><i class="icon icon-wallet"></i>交易订单数据分析</a></div>
+        </li>
         <li>
             <div class="category"><a href="${root}/analysis/statis/toStatisPage.do" target="mainiframe"><i class="icon icon-wallet"></i>全局统计</a></div>
         </li>

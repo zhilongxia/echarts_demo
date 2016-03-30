@@ -4,7 +4,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>街坊店宝</title>
+    <title>街坊数据分析</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <%@ include file="../common/head.jsp"%>
@@ -56,7 +56,7 @@
 			} else {
 				$.ajax({
 					type: "POST",
-					url: "${root}/analysis/authority/supplierLoginIn.do",
+					url: "${root}/analysis/authority/scmsLoginPage.do",
 					async: true,
 					data: encodeURI($("#entryform").serialize()),
 					success: function(date) {

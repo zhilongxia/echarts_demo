@@ -2,6 +2,7 @@ eclipse.preferences.version=1
 encoding//src/main/java/com/zjjf/analysis/controller/globals/GlobalStatisController.java=UTF-8
 encoding//src/main/java/com/zjjf/analysis/controller/globals/IndexController.java=GBK
 encoding//src/main/java/com/zjjf/analysis/controller/login/AuthorityController.java=GBK
+encoding//src/main/java/com/zjjf/analysis/controller/sporder/SpOrderController.java=GBK
 encoding//src/main/resources/generatorConfig.xml=UTF-8
 encoding//src/main/webapp/WEB-INF/view/echarts/graph_char.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/view/echarts/graph_char_data.jsp=UTF-8
